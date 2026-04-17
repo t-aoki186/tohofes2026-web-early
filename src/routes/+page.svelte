@@ -178,7 +178,7 @@
 	<div class="tp-info container mx-auto mt-10 rounded-xl p-4" data-aos="fade-up">
 		<p class="mb-2 text-center font-bold"><i class="fa-solid fa-circle-info"></i>持ち物について</p>
 		<p class="mb-2 text-center">
-			校内は土足禁止ですので、<strong>必ず上履きをご持参ください</strong>。
+			校内は土足禁止ですので 、<strong>必ず上履きをご持参ください</strong>。
 		</p>
 		<a href="/visitor" class="link-main">
 			<div class="link-main-underline">
@@ -257,7 +257,7 @@
 			{/each}
 		</p>
 	</div>
-	<div class="container mx-auto mt-4 mb-4" data-aos="fade-up">
+	<div class="container mx-auto mt-4 mb-12" data-aos="fade-up">
 		<div class="main-link">
 			<div class="link-2">
 				<!--テーマ説明-->
@@ -697,13 +697,13 @@
 			{/each}
 		</p>
 	</div>
-	<div class="container mx-auto mt-4" data-aos="fade-up">
+	<div class="container mx-auto mt-4 mb-12" data-aos="fade-up">
 		<div class="main-link">
 			<div class="link-2 bg-white" style="padding: 0 !important;">
 				<img
-					src="https://pic.atserver186.jp/tohofes2025.JPG"
+					src="https://pic.atserver186.jp/img/tohofes/past_tohofes.webp"
 					alt="桐朋祭画像"
-					class="h-auto w-full"
+					class="h-auto w-full rounded-xl"
 				/>
 			</div>
 			<div class="link-2">
@@ -733,7 +733,7 @@
 			{/each}
 		</p>
 	</div>
-	<div class="container mx-auto mt-4 mb-10" data-aos="fade-up">
+	<div class="container mx-auto mt-4 mb-12" data-aos="fade-up">
 		<div class="main-link">
 			<div class="link-2">
 				<!--テーマ説明-->
