@@ -8,6 +8,7 @@
 
 <svelte:head>
 	<title>{pageTitle} | {data.site_title}</title>
+	<meta property="og:title" content="{pageTitle} | {data.site_title}" />
 </svelte:head>
 
 <main class="mt-15 mr-1 ml-1 min-h-screen">
@@ -15,7 +16,7 @@
 		<p class="tf26-page-title" style="color: black; margin-bottom: 0;">{pageTitle}</p>
 	</div>
 	<section class="container mx-auto mt-15 mb-25">
-		<p>サーバー構成</p>
+		<p>準備中です</p>
 	</section>
 </main>
 <ol class="main-breadcrumb container mx-auto">

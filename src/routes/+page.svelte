@@ -86,6 +86,7 @@
 
 <svelte:head>
 	<title>{data.site_title}</title>
+	<meta property="og:title" content="{data.site_title}" />
 </svelte:head>
 
 <Modal bind:showModal>
