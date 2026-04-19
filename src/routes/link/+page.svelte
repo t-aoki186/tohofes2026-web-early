@@ -42,6 +42,7 @@
 					><i class="fa-brands fa-instagram text-xl"></i>
 					Instagram<br /><span>@tohofes_2026</span></a
 				>
+				<!--
 				<a
 					class="profile-link-card"
 					href="https://commina.atserver186.jp/tohofes_2026/"
@@ -53,6 +54,7 @@
 					><i class="fa-brands fa-github text-xl"></i>
 					Github<br /><span>@t-aoki186</span></a
 				>
+					-->
 				<a class="profile-link-card" href="https://www.toho.ed.jp/" target="_blank"
 					><i class="fa-solid fa-up-right-from-square text-xl"></i>
 					桐朋中学校・高等学校HP<br /><span></span></a

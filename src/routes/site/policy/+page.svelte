@@ -17,7 +17,7 @@
 		<p class="tf26-page-title" style="color: black; margin-bottom: 0;">{pageTitle}</p>
 	</div>
 	<section class="container mx-auto mt-15 mb-25 flex flex-col">
-		<p>test</p>
+		<p>準備中です</p>
 	</section>
 </main>
 <ol class="main-breadcrumb container mx-auto">

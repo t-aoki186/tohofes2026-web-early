@@ -242,12 +242,12 @@
 					>
 				</li>
 				<li>
-					<p class="ml-3 text-xs tracking-wider text-gray-500 transition cursor-no-drop">
+					<p class="ml-3 cursor-no-drop text-xs tracking-wider text-gray-500 transition">
 						団体/飲食/企画/イベント
 					</p>
 				</li>
 				<li>
-					<p class="ml-3 text-xs tracking-wider text-gray-500 transition cursor-no-drop">
+					<p class="ml-3 cursor-no-drop text-xs tracking-wider text-gray-500 transition">
 						タイムテーブル
 					</p>
 				</li>
@@ -268,8 +268,8 @@
 				<li><a href="/" class="header-text">ホーム</a></li>
 				<li><a href="/about" class="header-text">桐朋祭とは</a></li>
 				<li><a href="/visitor" class="header-text">来場者の皆様へ</a></li>
-				<li><p class="text-gray-500 cursor-no-drop">団体/飲食/企画/イベント</p></li>
-				<li><p class="text-gray-500 cursor-no-drop">タイムテーブル</p></li>
+				<li><p class="cursor-no-drop text-gray-500">団体/飲食/企画/イベント</p></li>
+				<li><p class="cursor-no-drop text-gray-500">タイムテーブル</p></li>
 				<li>
 					<button class="header-text" onclick={() => (otherOpen = !otherOpen)}>その他</button>
 				</li>
@@ -388,8 +388,6 @@
 						<li><a href="/about">桐朋祭について</a></li>
 						<li><a href="/visitor">来場者の皆様へ</a></li>
 						<li><a href="/access">本校へのアクセス</a></li>
-						<li><a href="/timetable">タイムテーブル</a></li>
-						<li><a href="/qa">よくある質問</a></li>
 						<li><a href="/news">お知らせ</a></li>
 						<li><a href="/site/info">サイト情報</a></li>
 						<li><a href="/site/sitemap">サイトマップ</a></li>
@@ -399,31 +397,32 @@
 				<div class="footer-flex-content">
 					<h4>参加団体</h4>
 					<ul>
-						<li><a href="/">ランダムに5件表示</a></li>
-						<li><a href="/organizations">すべての参加団体を確認する</a></li>
+						<li></li>
 					</ul>
 				</div>
 				<div class="footer-flex-content">
 					<h4>各種SNS / リンク</h4>
 					<ul>
 						<li>
-							<a href="https://x.com" target="_blank">
+							<a href="https://x.com/tohofes_2026" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://www.instagram.com" target="_blank">
+							<a href="https://www.instagram.com/tohofes_2026/" target="_blank">
 								<i class="fa-brands fa-instagram mr-1 text-xs"></i>
 								<span>Instagram</span>
 							</a>
 						</li>
+						<!--
 						<li>
 							<a href="https://atserver186.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>ATSocial</span>
 							</a>
 						</li>
+						-->
 						<li>
 							<a href="http://toho.ed.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
@@ -469,8 +468,6 @@
 						<li><a href="/about">桐朋祭について</a></li>
 						<li><a href="/visitor">来場者の皆様へ</a></li>
 						<li><a href="/access">本校へのアクセス</a></li>
-						<li><a href="/timetable">タイムテーブル</a></li>
-						<li><a href="/qa">よくある質問</a></li>
 						<li><a href="/news">お知らせ</a></li>
 						<li><a href="/site/info">サイト情報</a></li>
 						<li><a href="/site/sitemap">サイトマップ</a></li>
@@ -480,31 +477,32 @@
 				<details class="accordion-main mb-4 min-w-full">
 					<summary class="font-bold">参加団体</summary>
 					<ul class="pt-2 pl-2">
-						<li><a href="/">ランダムに5件表示</a></li>
-						<li><a href="/organizations">すべての参加団体を確認する</a></li>
+						<li></li>
 					</ul>
 				</details>
 				<details class="accordion-main min-w-full">
 					<summary class="font-bold">各種SNS / リンク</summary>
 					<ul class="pt-2 pl-2">
 						<li>
-							<a href="https://x.com" target="_blank">
+							<a href="https://x.com/tohofes_2026" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://www.instagram.com" target="_blank">
+							<a href="https://www.instagram.com/tohofes_2026/" target="_blank">
 								<i class="fa-brands fa-instagram mr-1 text-xs"></i>
 								<span>Instagram</span>
 							</a>
 						</li>
+						<!--
 						<li>
 							<a href="https://atserver186.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>ATSocial</span>
 							</a>
 						</li>
+						-->
 						<li>
 							<a href="http://toho.ed.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
@@ -544,7 +542,7 @@
 			><span class="footer-span">|</span>
 			<a href="/site/contact" class="footer-link" style="margin-left: 10px;">お問い合わせ</a>
 			<p class="footer-text">
-				&copy; 2026 TohoFes. | atserver186.jp All Rights Reserved.
+				&copy; 2026 TohoFes. | tohofes.jp All Rights Reserved.
 				本サイトの無断転載は、固くこれを禁じます。
 			</p>
 		</div>

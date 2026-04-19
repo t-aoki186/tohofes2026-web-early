@@ -17,6 +17,10 @@
 		<p class="tf26-page-title" style="color: black; margin-bottom: 0;">{pageTitle}</p>
 	</div>
 	<section class="container mx-auto mt-15 mb-25 flex flex-col">
+		<p>お問い合わせフォームは準備中です。<br />以下のメールアドレスにお問い合わせください。</p>
+		<p>84th.tccaoki[at]gmial.com</p>
+		<p>[at]は@に置き換えてください。</p>
+		<!--
 		<div class="mx-auto w-full rounded-2xl bg-gray-50 p-10 md:w-[70%] lg:w-[50%]">
 			<form class="flex flex-col">
 				<label class="mb-4">
@@ -52,6 +56,7 @@
 				>
 			</form>
 		</div>
+		-->
 	</section>
 </main>
 <ol class="main-breadcrumb container mx-auto">
