@@ -62,7 +62,7 @@
 	let scrolled = $state(false);
 
 	const headerClass = $derived(
-		`fixed top-0 right-0 left-0 z-20 border border-black/10 bg-white backdrop-blur-md transition-all duration-500 overflow-hidden` +
+		`fixed top-0 right-0 left-0 z-20 border border-black/10 bg-white backdrop-blur-md transition-all duration-500 overflow-hidden z-19999` +
 			(scrolled ? ' scroll-nav' : '') +
 			(otherOpen
 				? ' max-h-[100vh] rounded-b-[1.0rem]'
@@ -92,7 +92,6 @@
 	//AOSの初期化
 	onMount(() => {
 		AOS.init({
-			// オプション（任意）
 			duration: 800, //アニメーションの時間（ミリ秒）
 			once: false //何度でもアニメーションを発火させる
 		});

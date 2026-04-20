@@ -17,7 +17,13 @@
 		<p class="tf26-page-title" style="color: black; margin-bottom: 0;">{pageTitle}</p>
 	</div>
 	<section class="container mx-auto mt-15 mb-25">
-		<div class="mt-4 min-w-full">
+		<div class="min-w-full">
+			<img
+				src="https://pic.atserver186.jp/img/tohofes/tf26-logo-m-v3.webp"
+				alt="第75回桐朋祭ロゴ"
+				class="m-auto ml-auto mb-4 h-auto w-[20%]"
+				style="view-transition-name: tftheme-hero;"
+			/>
 			<h1 class="tf26-section-title">テーマについて</h1>
 			<br />
 			<p class="fade-up-o mb-4 leading-[1.8rem]">

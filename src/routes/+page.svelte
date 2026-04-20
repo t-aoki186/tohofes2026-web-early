@@ -740,11 +740,11 @@
 	</div>
 	<div class="container mx-auto mt-4 mb-12" data-aos="fade-up">
 		<div class="main-link">
-			<div class="link-2 bg-white" style="padding: 0 !important;">
+			<div class="link-2 bg-white" style="padding: 0 !important; margin: 0 !important;">
 				<img
 					src="https://pic.atserver186.jp/img/tohofes/past_tohofes.webp"
 					alt="桐朋祭画像"
-					class="h-auto w-full rounded-xl"
+					class="h-auto w-full rounded-lg" style="view-transition-name: tohofes-hero;"
 				/>
 			</div>
 			<div class="link-2">
@@ -788,7 +788,7 @@
 				<img
 					src="https://pic.atserver186.jp/img/tohofes/tf26-logo-m-v3.webp"
 					alt="第75回桐朋祭ロゴ"
-					class="m-auto ml-auto block h-auto w-[50%]"
+					class="m-auto ml-auto block h-auto w-[50%]" style="view-transition-name: tftheme-hero;"
 				/>
 			</div>
 		</div>
