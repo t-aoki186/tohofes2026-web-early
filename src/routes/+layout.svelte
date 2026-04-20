@@ -42,7 +42,7 @@
 	let accordionOpen = $state(false);
 
 	//共通変数
-	let logo = 'https://pic.atserver186.jp/img/tohofes/tf26-logo-m-v2.webp';
+	let logo = 'https://pic.atserver186.jp/img/tohofes/tf26-logo-m-v3.webp';
 	let logo_2 = 'https://pic.atserver186.jp/img/tohofes/tf26-logo-s.webp';
 	let logo_alt = '第75回桐朋祭ロゴ';
 	let school_address = '東京都国立市中3-1-10';
@@ -201,13 +201,9 @@
 		<!---->
 		<div class="flex items-center md:hidden">
 			<!--s:スマホ用検索ボタン-->
-			<button
-				onclick={() => openModal('search')}
-				type="button"
-				title="検索する"
-				class="mr-4 cursor-pointer text-sm"
-				><i class="fa-solid fa-magnifying-glass text-(--main-text-color)"></i></button
-			>
+			<p class="mr-4 cursor-not-allowed text-sm">
+				<i class="fa-solid fa-magnifying-glass text-gray-500"></i>
+			</p>
 			<!--e:スマホ用検索ボタン-->
 			<!-- ハンバーガー / その他メニュー閉じる（スマホ用） -->
 			<div class="grid">
