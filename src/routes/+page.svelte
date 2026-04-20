@@ -815,20 +815,6 @@
 </main>
 
 <style>
-	@view-transition {
-		navigation: auto;
-	}
-
-	.auto-scroll-organization-section {
-		width: 80%;
-	}
-
-	@media (max-width: 768px) {
-		.auto-scroll-organization-section {
-			width: 100%;
-		}
-	}
-
 	.tp-top-container {
 		position: relative;
 		height: 100vh;
@@ -852,7 +838,6 @@
 
 		.tp-top-v {
 			object-fit: contain;
-			border-radius: 1.5rem;
 		}
 	}
 
