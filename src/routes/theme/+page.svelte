@@ -20,7 +20,7 @@
 		<div class="mt-4 min-w-full">
 			<h1 class="tf26-section-title">テーマについて</h1>
 			<br />
-			<p class="mb-4 leading-[1.8rem]">
+			<p class="mb-4 leading-[1.8rem] fade-up-o">
 				第 75 回桐朋祭実行委員会では、まずテーマで表現したい要素について「桐朋祭が盛り上がる様子」
 				「細かいところまで気を配り完成していく様子」 「すべてのものや人が活かされる様子」
 				を重視することにしました。
