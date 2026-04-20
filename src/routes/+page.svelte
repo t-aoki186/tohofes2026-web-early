@@ -68,6 +68,15 @@
 	/*===*/
 	let videoElement: HTMLVideoElement;
 
+	function handleEnded() {
+		if (videoElement) {
+			videoElement.currentTime = 0;
+			videoElement.play().catch((error) => {
+				console.error('動画の再生再開に失敗しました:', error);
+			});
+		}
+	}
+
 	onMount(() => {
 		if (videoElement) {
 			//再生処理
