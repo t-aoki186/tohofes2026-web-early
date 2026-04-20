@@ -25,7 +25,7 @@
 			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.4746059148924!2d139.44237747639895!3d35.68993672949453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e3f60c18b89b%3A0xec006afe5f872d28!2z5qGQ5pyL5Lit5a2m5qCh44O75qGQ5pyL6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1771772582613!5m2!1sja!2sjp"
 			width="100%"
 			height="450"
-			style="border:0;"
+			style="border:0; view-transition-name: accessp-hero;"
 			class="mb-4"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
