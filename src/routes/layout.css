@@ -508,6 +508,29 @@ body {
 	animation-delay: calc(var(--index) * 0.05s);
 }
 
+/* View Transitionのアニメーションをカスタマイズ */
+::view-transition-old(tftheme-hero),
+::view-transition-old(tfnews-hero) {
+  animation-duration: 1s; /* 速度を1秒に変更 */
+  animation-timing-function: ease-in-out; /* イージングを変更 */
+}
+
+::view-transition-new(tftheme-hero),
+::view-transition-old(tfnews-hero) {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+/* アニメーションの移動距離を調整（例: 20pxにする場合） */
+[data-aos^='fade'][data-aos^='fade'] {
+  transform: translate3d(0, 35px, 0);
+}
+
+/* 既に表示（アニメーション完了）した状態のスタイル */
+[data-aos^='fade'].aos-animate {
+  transform: translate3d(0, 0, 0);
+}
+
 @keyframes rise {
 	0% {
 		opacity: 0;

@@ -320,7 +320,7 @@
 					referrerpolicy="no-referrer-when-downgrade"
 					title="Google Map"
 					class="rounded-lg"
-					style="border:0; view-transition-name: accessp-hero;"
+					style="border:0;"
 				></iframe>
 			</div>
 		</div>
@@ -738,7 +738,7 @@
 				<img
 					src="https://pic.atserver186.jp/img/tohofes/past_tohofes.webp"
 					alt="桐朋祭画像"
-					class="h-auto w-full rounded-lg" style="view-transition-name: tohofes-hero;"
+					class="h-auto w-full rounded-lg"
 				/>
 			</div>
 			<div class="link-2">

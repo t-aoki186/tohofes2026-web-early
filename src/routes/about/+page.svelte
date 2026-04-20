@@ -21,7 +21,7 @@
 			<img
 				src="https://pic.atserver186.jp/img/tohofes/past_tohofes.webp"
 				alt="桐朋祭画像"
-				class="h-[25vh] w-full rounded-lg mb-4 object-cover" style="view-transition-name: tohofes-hero;"
+				class="h-[25vh] w-full rounded-lg mb-4 object-cover"
 			/>
 			<h1 class="tf26-section-title">桐朋祭の概要</h1>
 			<br />
