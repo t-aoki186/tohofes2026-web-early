@@ -32,7 +32,7 @@
 			title="Google Map"
 		></iframe>
 		<a
-			href="/redirect/?url=https://www.google.com/maps?ll=35.689932,139.444952&z=16&t=m&hl=ja&gl=JP&mapclient=embed&cid=17005709833707924776"
+			href="https://www.google.com/maps?ll=35.689932,139.444952&z=16&t=m&hl=ja&gl=JP&mapclient=embed&cid=17005709833707924776"
 			class="link-main"
 		>
 			<div class="link-main-underline">

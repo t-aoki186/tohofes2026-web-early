@@ -7,6 +7,7 @@
 	/*独自スタイル*/
 	import './layout.css';
 	import './icon.css';
+	import './components.css';
 	/*favicon*/
 	import favicon from '$lib/assets/favicon.ico';
 	import { get } from 'svelte/store';
@@ -41,24 +42,33 @@
 	let { data, children } = $props();
 	let accordionOpen = $state(false);
 
-	//共通変数
+	/*s:共通変数*/
 	let logo = 'https://pic.atserver186.jp/img/tohofes/tf26-logo-m-v3.webp';
 	let logo_2 = 'https://pic.atserver186.jp/img/tohofes/tf26-logo-s.webp';
 	let logo_alt = '第75回桐朋祭ロゴ';
 	let school_address = '東京都国立市中3-1-10';
+	/*e:共通変数*/
 
-	//ハンバーガーメニュー
+	/*s:ハンバーガーメニュー*/
 	let open = $state(false);
 	let isOtherClosing = $state(false);
 	let otherOpen = $state(false);
 	let pendingOpen = false;
+	/*e:ハンバーガーメニュー*/
 
+	/*s:target="_blank"モーダル*/
+	let targetUrl = $state('');
+	let showLinkModal = $state(false);
+	/*e:target="_blank"モーダル*/
+
+	/*s:ヘッダーその他メニュー*/
 	function closeOther(goBackToMenu: boolean = false) {
 		if (goBackToMenu) pendingOpen = true;
 		otherOpen = false;
 	}
+	/*e:ヘッダーその他メニュー*/
 
-	//100pxスクロールでヘッダーの表示を変更
+	/*s:スクロールでヘッダーサイズ変更*/
 	let scrolled = $state(false);
 
 	const headerClass = $derived(
@@ -78,6 +88,7 @@
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	});
+	/*e:スクロールでヘッダーサイズ変更*/
 
 	/*s:モーダル*/
 	let showModal = $state(false);
@@ -89,19 +100,20 @@
 	}
 	/*e:モーダル*/
 
-	//AOSの初期化
+	/*s:AOSの初期化*/
 	onMount(() => {
 		AOS.init({
 			duration: 800, //アニメーションの時間（ミリ秒）
 			once: false //何度でもアニメーションを発火させる
 		});
 	});
+	/*e:AOSの初期化*/
 
 	/*s:View Transition*/
 	setupViewTransition();
 	/*e:View Transition*/
 
-	/*ローディングアニメーション*/
+	/*s:ローディングアニメーション*/
 	onMount(() => {
 		// localStorage をチェック
 		const alreadySeen = localStorage.getItem('hasSeenIntro');
@@ -119,6 +131,31 @@
 			}, 2000);
 		}
 	});
+	/*e:ローディングアニメーション*/
+
+	/*s:target="_blank"モーダル*/
+	function openExternalLink(event) {
+		//クリックされた要素から一番近いaタグを探す
+		const anchor = event.target.closest('a');
+		//`target="_blank"`が設定されている場合にのみ発火
+		if (anchor && anchor.target === '_blank') {
+			event.preventDefault();
+			targetUrl = anchor.href;
+			showLinkModal = true;
+		}
+	}
+
+	function copyLnk() {
+		navigator.clipboard.writeText(targetUrl);
+		alert('URLをコピーしました'); //将来的にはトースト通知などに変更
+		showLinkModal = false;
+	}
+
+	function openLink() {
+		window.open(targetUrl, '_blank', 'noopener.noreferrer');
+		showLinkModal = false;
+	}
+	/*e:target="_blank"モーダル*/
 </script>
 
 <svelte:head>
@@ -184,6 +221,23 @@
 		</div>
 	{/if}
 </Modal>
+
+<svelte:window onclick={openExternalLink} />
+
+{#if showLinkModal}
+	<div class="modal-backdrop">
+		<div class="main-modal">
+			<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">外部サイトへ移動しますか？</p>
+			<hr class="main-hr" />
+			<p class="leading-[1.8rem] text-[0.8rem] text-gray-600 break-all mb-5">{targetUrl}</p>
+			<div class="actions">
+				<button onclick={openLink}>リンクを開く</button>
+				<button onclick={copyLnk}>リンクをコピー</button>
+				<button onclick={() => (showLinkModal = false)}>キャンセル</button>
+			</div>
+		</div>
+	</div>
+{/if}
 
 {#if $isVisible}
 	<Loading />
@@ -565,4 +619,9 @@
 </footer>
 
 <style>
+	.actions {
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+	}
 </style>
