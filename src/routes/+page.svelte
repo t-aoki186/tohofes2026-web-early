@@ -68,23 +68,19 @@
 	/*===*/
 	let videoElement: HTMLVideoElement;
 
-	function handleEnded() {
-		if (videoElement) {
-			videoElement.currentTime = 0;
-			videoElement.play().catch((error) => {
-				console.error('動画の再生再開に失敗しました:', error);
-			});
-		}
-	}
-
 	onMount(() => {
 		if (videoElement) {
-			//再生処理
+			// 再生処理
 			videoElement.play().catch((error) => {
-				console.error('自動再生がブロックされました:', error);
+				console.error('オートプレイがブロックされました:', error);
 			});
 		}
 	});
+
+	// 終了時のハンドラー（必要に応じて処理を追加）
+	const handleEnded = () => {
+		console.log('再生終了：最終フレームで停止中');
+	};
 </script>
 
 <svelte:head>
