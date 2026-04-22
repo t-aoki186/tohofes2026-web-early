@@ -37,6 +37,7 @@
 	--title-bg-color: #cb3565;
 }
 
+/*s:フォント*/
 .line-seed-jp-thin {
   font-family: "LINE Seed JP", sans-serif;
   font-weight: 100;
@@ -60,7 +61,7 @@
   font-weight: 800;
   font-style: normal;
 }
-
+/*e:フォント*/
 
 /*font-family: 'Noto Sans JP', sans-serif;*/
 body {
@@ -508,11 +509,12 @@ body {
 	animation-delay: calc(var(--index) * 0.05s);
 }
 
-/* View Transitionのアニメーションをカスタマイズ */
+/*s:View Transition*/
+/*
 ::view-transition-old(tftheme-hero),
 ::view-transition-old(tfnews-hero) {
-  animation-duration: 1s; /* 速度を1秒に変更 */
-  animation-timing-function: ease-in-out; /* イージングを変更 */
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
 }
 
 ::view-transition-new(tftheme-hero),
@@ -520,16 +522,18 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
 }
+  */
+/*s:View Transition*/
 
-/* アニメーションの移動距離を調整（例: 20pxにする場合） */
+/*s:AOS*/
 [data-aos^='fade'][data-aos^='fade'] {
   transform: translate3d(0, 35px, 0);
 }
 
-/* 既に表示（アニメーション完了）した状態のスタイル */
 [data-aos^='fade'].aos-animate {
   transform: translate3d(0, 0, 0);
 }
+/*e:AOS*/
 
 @keyframes rise {
 	0% {

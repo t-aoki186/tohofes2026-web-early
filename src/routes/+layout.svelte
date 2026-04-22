@@ -145,7 +145,7 @@
 		}
 	}
 
-	function copyLnk() {
+	function copyLink() {
 		navigator.clipboard.writeText(targetUrl);
 		alert('URLをコピーしました'); //将来的にはトースト通知などに変更
 		showLinkModal = false;
@@ -227,13 +227,30 @@
 {#if showLinkModal}
 	<div class="modal-backdrop">
 		<div class="main-modal">
-			<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">外部サイトへ移動しますか？</p>
+			<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">
+				外部サイトへ移動しますか？
+			</p>
 			<hr class="main-hr" />
-			<p class="leading-[1.8rem] text-[0.8rem] text-gray-600 break-all mb-5">{targetUrl}</p>
+			<p class="mb-5 text-[0.8rem] leading-[1.8rem] break-all text-gray-600">{targetUrl}</p>
 			<div class="actions">
-				<button onclick={openLink}>リンクを開く</button>
-				<button onclick={copyLnk}>リンクをコピー</button>
-				<button onclick={() => (showLinkModal = false)}>キャンセル</button>
+				<button onclick={openLink} class="link-main">
+					<div class="link-main-underline">
+						<i class="fa-solid fa-up-right-from-square"></i>
+						<span>リンクを開く</span>
+					</div>
+				</button>
+				<button onclick={copyLink} class="link-main">
+					<div class="link-main-underline">
+						<i class="fa-solid fa-copy"></i>
+						<span>リンクをコピー</span>
+					</div>
+				</button>
+				<button onclick={() => (showLinkModal = false)} class="link-main">
+					<div class="link-main-underline">
+						<i class="fa-solid fa-arrow-right-long"></i>
+						<span>キャンセル</span>
+					</div>
+				</button>
 			</div>
 		</div>
 	</div>
