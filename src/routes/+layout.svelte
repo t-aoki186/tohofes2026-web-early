@@ -44,7 +44,7 @@
 
 	/*s:共通変数*/
 	let logo = 'https://pic.atserver186.jp/img/tohofes/tf26-logo-m-v3.webp';
-	let logo_2 = 'https://pic.atserver186.jp/img/tohofes/tf26-logo-s.webp';
+	let logo_2 = 'https://pic.atserver186.jp/img/tohofes/tf26-logo-s-v2.webp';
 	let logo_alt = '第75回桐朋祭ロゴ';
 	let school_address = '東京都国立市中3-1-10';
 	/*e:共通変数*/
