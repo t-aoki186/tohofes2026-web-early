@@ -85,7 +85,7 @@
 
 <svelte:head>
 	<title>{data.site_title}</title>
-	<meta property="og:title" content="{data.site_title}" />
+	<meta property="og:title" content={data.site_title} />
 </svelte:head>
 
 <Modal bind:showModal>
@@ -787,7 +787,8 @@
 				<img
 					src="https://pic.atserver186.jp/img/tohofes/tf26-logo-m-v3.webp"
 					alt="第75回桐朋祭ロゴ"
-					class="m-auto ml-auto block h-auto w-[50%]" style="view-transition-name: tftheme-hero;"
+					class="m-auto ml-auto block h-auto w-[50%]"
+					style="view-transition-name: tftheme-hero;"
 				/>
 			</div>
 		</div>
@@ -818,6 +819,23 @@
 		position: relative;
 		height: 100vh;
 		width: 100%;
+		overflow: hidden;
+	}
+
+	.tp-top-container::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image:
+			linear-gradient(rgba(0, 0, 0, 0.1)),
+			url('https://pic.atserver186.jp/img/tohofes/top-page/top-video/top-i-pc-v2.webp');
+		background-size: cover;
+		filter: blur(10px);
+		z-index: -1;
+		transform: scale(1.1);
 	}
 
 	.tp-top-content {
