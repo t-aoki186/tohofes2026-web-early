@@ -833,6 +833,8 @@
 			linear-gradient(rgba(0, 0, 0, 0.1)),
 			url('https://pic.atserver186.jp/img/tohofes/top-page/top-video/top-i-pc-v2.webp');
 		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		filter: blur(10px);
 		z-index: -1;
 		transform: scale(1.1);
@@ -851,13 +853,18 @@
 		.tp-top-content {
 			width: 90%;
 			margin-inline: auto;
+			/* 親要素でも念のためクリッピングを設定 */
+			overflow: hidden;
 		}
 
 		.tp-top-v {
 			object-fit: contain;
+			/* 角丸を適用（16px〜24px程度が一般的ですが、お好みで調整してください） */
+			border-radius: 24px;
+			/* 動画要素自体からはみ出る描画をカット */
+			overflow: hidden;
 		}
 	}
-
 	@media (max-width: 768px) {
 		.tp-top-content {
 			width: 100%;
