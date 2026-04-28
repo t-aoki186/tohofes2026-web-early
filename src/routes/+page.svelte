@@ -184,7 +184,7 @@
 				muted
 				playsinline
 				preload="auto"
-				class="tp-top-v h-full w-full"
+				class="tp-top-v md:my-auto"
 			>
 				<source
 					src="https://pic.atserver186.jp/img/tohofes/top-page/top-video/top-v-pc.mp4"
@@ -843,35 +843,42 @@
 	.tp-top-content {
 		width: 100%;
 		height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.tp-top-v {
 		object-fit: cover;
+		height: 100%;
+		width: 100%;
 	}
 
 	@media (max-width: 1280px) {
 		.tp-top-content {
 			width: 90%;
 			margin-inline: auto;
-			/* 親要素でも念のためクリッピングを設定 */
 			overflow: hidden;
 		}
 
 		.tp-top-v {
 			object-fit: contain;
-			/* 角丸を適用（16px〜24px程度が一般的ですが、お好みで調整してください） */
 			border-radius: 24px;
-			/* 動画要素自体からはみ出る描画をカット */
-			overflow: hidden;
+			height: auto;
+			width: 100%;
+
+			background-color: white;
 		}
 	}
 	@media (max-width: 768px) {
 		.tp-top-content {
-			width: 100%;
+			width: auto;
+			height: 100%;
 		}
 
 		.tp-top-v {
 			object-fit: cover;
+			height: 100%;
+			border-radius: 0;
 		}
 	}
 </style>
