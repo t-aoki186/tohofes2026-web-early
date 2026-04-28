@@ -155,6 +155,20 @@ body {
 	align-items: center;
 }
 
+.link-main-underline span{
+	font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+	.link-main {
+		padding: 8px 12px;
+	}
+
+	.link-main-underline span{
+		font-size: 0.9rem;
+	}
+}
+
 /*container*/
 .main-link {
 	width: 100%;

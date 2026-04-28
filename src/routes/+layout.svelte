@@ -232,7 +232,7 @@
 			</p>
 			<hr class="main-hr" />
 			<p class="mb-5 text-[0.8rem] leading-[1.8rem] break-all text-gray-600">{targetUrl}</p>
-			<div class="actions">
+			<div class="redirect-link-actions">
 				<button onclick={openLink} class="link-main">
 					<div class="link-main-underline">
 						<i class="fa-solid fa-up-right-from-square"></i>
@@ -636,9 +636,19 @@
 </footer>
 
 <style>
-	.actions {
+	.redirect-link-actions {
 		display: flex;
 		gap: 10px;
 		justify-content: center;
+	}
+
+	@media (max-width: 768px){
+		.redirect-link-actions{
+			flex-direction: column;
+		}
+
+		.link-main{
+			width: 100%;
+		}
 	}
 </style>
