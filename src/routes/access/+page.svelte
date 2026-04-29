@@ -26,7 +26,7 @@
 			width="100%"
 			height="450"
 			style="border:0;"
-			class="mb-4"
+			class="mb-4 rounded-xl"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
 			title="Google Map"

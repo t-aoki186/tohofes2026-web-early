@@ -178,6 +178,21 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@tohofes_2026" />
 	<!--e:SEO-->
+	<!---->
+	<!--s:Google Analytics-->
+	<!-- Google tag (gtag.js) -->
+	<!--
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LE8CXZXGWS"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-LE8CXZXGWS');
+	</script>
+-->
 </svelte:head>
 
 <Modal bind:showModal>
@@ -642,12 +657,12 @@
 		justify-content: center;
 	}
 
-	@media (max-width: 768px){
-		.redirect-link-actions{
+	@media (max-width: 768px) {
+		.redirect-link-actions {
 			flex-direction: column;
 		}
 
-		.link-main{
+		.link-main {
 			width: 100%;
 		}
 	}
