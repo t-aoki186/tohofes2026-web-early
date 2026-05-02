@@ -62,6 +62,7 @@
 					<span>テーマについてはこちらをご覧ください</span>
 				</div>
 			</a>
+			<h1 class="tf26-section-title">過去の様子</h1>
 		</div>
 	</section>
 </main>
