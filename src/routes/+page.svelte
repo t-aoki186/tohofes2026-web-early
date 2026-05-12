@@ -131,24 +131,20 @@
 			<i class="fa-solid fa-circle-exclamation mr-2"></i>災害が発生した場合
 		</p>
 		<hr class="main-hr" />
-		<p class="mb-2 leading-[1.8rem]">
+		<p class="leading-[1.8rem]">
 			<span class="font-bold">地震が発生した場合 …</span>
 			<br />
-			<span class="text-red-600">まずはその場で身の安全を確保してください。</span
+			<span class="text-red-600 font-bold">まずはその場で身の安全を確保してください。</span
 			>本校舎は耐震構造になっており、安全です。指示があるまでは校舎内に留まるようお願いします。
 		</p>
 		<p class="mb-2 leading-[1.8rem]">
 			<span class="font-bold">火災が発生した場合 …</span>
 			<br />
-			<span class="text-red-600">火元には絶対に近づかず</span
+			<span class="text-red-600 font-bold">火元には絶対に近づかず</span
 			>、速やかに近くにいる大人へ通報してください。
-		</p>
-		<p class="leading-[1.8rem]">
+			<br />
 			災害の発生後、教職員による避難誘導が開始された場合は、落ち着いてその誘導に従ってください。避難場所は東グラウンドです。
 		</p>
-		<a href="/visitor/#dsaster" class="mt-2 text-(--main-text-color)"
-			><i class="fa-solid fa-link mr-2 text-sm"></i>詳しくはこちらをご覧ください
-		</a>
 		<!--e:M.災害が発生した場合-->
 		<!---->
 		<!--s:M.校内でのお食事について-->
@@ -191,6 +187,7 @@
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
 			体調がすぐれない場合、ご気分の悪い場合は、決して無理をなさらず、お近くの桐朋祭スタッフまでお声がけください。
+			<br />
 			保健室へお連れいたします。
 		</p>
 		<!--e:M.体調不良について-->
