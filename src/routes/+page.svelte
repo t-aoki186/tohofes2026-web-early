@@ -94,8 +94,9 @@
 		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">お困りの場合</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
-			道に迷った場合、落とし物をした場合、その他のお困りの場合は、お近くの桐朋祭スタッフまでお声がけください。総合案内所までご案内いたします。<br
-			/>また不審者、不審物を見かけたら絶対に近づかず、お近くの桐朋祭スタッフにお知らせください。
+			迷子を発見した場合、落とし物をした場合、その他お困りの際は、お気軽にお近くの桐朋祭スタッフまでお声がけください。
+			<br />
+			また、万が一不審者や不審物を見かけたら絶対に近づかず、速やかにお近くの桐朋祭スタッフにお知らせください。
 		</p>
 		<!--e:M.お困りの場合-->
 		<!---->
@@ -103,7 +104,18 @@
 	{:else if modalType === 'b'}
 		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">お支払いについて</p>
 		<hr class="main-hr" />
-		<p class="leading-[1.8rem]">支払いの簡単な説明</p>
+		<p class="leading-[1.8rem]">
+			今年度から、生徒による飲食団体に限り<span class="font-bold text-red-600"
+				>「完全キャッシュレス決済」</span
+			>を導入しています。
+		</p>
+		<p class="leading-[1.8rem] font-bold">
+			飲食団体とジュース売り場では、<span class="text-red-600"
+				><span class="underline">交通系ICカードのみ</span>ご利用いただけます。</span
+			>
+			<br />
+			現金やクレジットカード、PayPayなどの他決済サービスはご利用いただけ ませんのでご注意ください。
+		</p>
 		<a href="/visitor/#payment" class="mt-2 text-(--main-text-color)"
 			><i class="fa-solid fa-link mr-2 text-sm"></i>詳しくはこちらをご覧ください
 		</a>
@@ -114,17 +126,19 @@
 		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">災害が発生した場合</p>
 		<hr class="main-hr" />
 		<p class="mb-2 leading-[1.8rem]">
-			地震: まずはその場で身を守ってください。本校舎は耐震構造のため、<strong
-				>安全が確保されるまで校舎内に留まってください。</strong
-			>
+			<span class="font-bold">地震が発生した場合 …</span>
+			<br />
+			<span class="text-red-600">まずはその場で身の安全を確保してください。</span
+			>本校舎は耐震構造になっており、安全です。指示があるまでは校舎内に留まるようお願いします。
 		</p>
 		<p class="mb-2 leading-[1.8rem]">
-			火災: <strong>火元には絶対に近づかず、速やかに離れてください。</strong>
+			<span class="font-bold">火災が発生した場合 …</span>
+			<br />
+			<span class="text-red-600">火元には絶対に近づかず</span
+			>、速やかに近くにいる大人へ通報してください。
 		</p>
 		<p class="leading-[1.8rem]">
-			避難誘導: 災害時は教職員が避難を案内しますので、指示に従って行動してください。<strong
-				>避難場所は東グラウンド</strong
-			>です。
+			災害の発生後、教職員による避難誘導が開始された場合は、落ち着いてその誘導に従ってください。避難場所は東グラウンドです。
 		</p>
 		<a href="/visitor/#dsaster" class="mt-2 text-(--main-text-color)"
 			><i class="fa-solid fa-link mr-2 text-sm"></i>詳しくはこちらをご覧ください
@@ -138,24 +152,24 @@
 		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
-			水分補給に関しましては校内どこでも可能ですが、お食事は指定された場所(食堂、飲食スペース用テント、特別教室5・6)以外ではご遠慮ください。<br
+			水分補給は校内どこでも可能ですが、お食事は指定された場所（食堂、屋台スペースのテント、特別教室5・6）以外ではご遠慮ください。
+			<br/>
+			また、校内で出たゴミは、指定の場所に分別をして処分していただきますようお願いいたします。<br
 			/>
 			<a href="/visitor/#campus_map">詳しはこちらの校内マップをご覧ください。</a>
-			<br />
-			また、校内で出たゴミにつきましては、指定の場所に分別して処分していただきますようお願いいたします。
 		</p>
 		<!--e:M.校内でのお食事について-->
 		<!---->
 		<!--s:M.乳幼児をお連れのご来場者様へ-->
 	{:else if modalType === 'e'}
 		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">
-			乳幼児をお連れのご来場者様へ
+			小さなお子様をお連れの方へ
 		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
-			乳幼児をお連れのご来場者様は、保健室の個室で授乳が可能です。授乳室をご利用の際は、お近くの桐朋祭スタッフにお声がけいただくか、総合案内所までお越しください
+			小さなお子様をお連れの方は、保健室の個室で授乳が可能です。ご利用をご希望の際は、お気軽に近くの桐朋祭スタッフまでお声がけください。
 			<br />
-			また、1回の総合案内所付近と食堂横中庭付近におむつ交換台付き多目的トイレがございます。
+			また、1階の総合案内所付近と食堂付近に、おむつ交換台つきの多目的トイレがございます。。
 			<br />
 			<a href="/visitor/#payment" class="mt-2 text-(--main-text-color)"
 				><i class="fa-solid fa-link mr-2 text-sm"
@@ -166,10 +180,11 @@
 		<!---->
 		<!--s:M.体調不良について-->
 	{:else if modalType === 'f'}
-		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">体調不良について</p>
+		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">体調がすぐれない場合</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
-			気分が悪くなった際は、無理をなさらずお近くの桐朋祭スタッフまでお声がけください。保健室までお連れいたします。
+			体調がすぐれない場合、ご気分の悪い場合は、決して無理をなさらず、お近くの桐朋祭スタッフまでお声がけください。
+			保健室へお連れいたします。
 		</p>
 		<!--e:M.体調不良について-->
 	{/if}
@@ -339,6 +354,127 @@
 	<!--e:アクセス-->
 	<!---->
 	<!--s:ご案内-->
+	<div class="container m-auto mt-10 rounded-xl bg-(--title-bg-color)" data-aos="fade-up">
+		<p use:reveal class="tf26-page-title" style="view-transition-name: tfvisitortitle-hero;">
+			{#each 'ご案内'.split('') as char, i}
+				<span class="char" style={`--d: ${i * 0.12}s`}>{char}</span>
+			{/each}
+		</p>
+	</div>
+	<div class="container mx-auto mt-4 mb-12" data-aos="fade-up">
+		<div class="main-link" style="border: none !important;">
+			<div class="link-2" style="padding: 0 !important;">
+				<ul>
+					<li class="mx-auto mb-4 w-full list-none">
+						<button onclick={() => openModal('a')} class="w-full cursor-pointer">
+							<div
+								class="news-list flex border-l-2 p-4"
+								style="border-left-color: var(--main-text-color);"
+							>
+								<div class="truncate-parent flex-col">
+									<p class="truncate-title guid-title-text ml-2 font-bold text-(--main-text-color)">
+										<i class="fa-solid fa-circle-info mr-2"></i>お困りの場合
+									</p>
+								</div>
+								<div class="news-list-icon my-auto ml-auto">
+									<i class="fa-solid fa-angles-right left-auto mr-2"></i>
+								</div>
+							</div>
+						</button>
+						<button onclick={() => openModal('b')} class="w-full cursor-pointer">
+							<div
+								class="news-list flex border-l-2 p-4"
+								style="border-left-color: var(--main-text-color);"
+							>
+								<div class="truncate-parent flex-col">
+									<p class="truncate-title guid-title-text ml-2 font-bold text-(--main-text-color)">
+										<i class="fa-solid fa-money-check-dollar mr-2"></i>お支払いについて
+									</p>
+								</div>
+								<div class="news-list-icon my-auto ml-auto">
+									<i class="fa-solid fa-angles-right left-auto mr-2"></i>
+								</div>
+							</div>
+						</button>
+						<button onclick={() => openModal('c')} class="w-full cursor-pointer">
+							<div
+								class="news-list flex border-l-2 p-4"
+								style="border-left-color: var(--main-text-color);"
+							>
+								<div class="truncate-parent flex-col">
+									<p class="truncate-title guid-title-text ml-2 font-bold text-(--main-text-color)">
+										<i class="fa-solid fa-circle-exclamation mr-2"></i>災害が発生した場合
+									</p>
+								</div>
+								<div class="news-list-icon my-auto ml-auto">
+									<i class="fa-solid fa-angles-right left-auto mr-2"></i>
+								</div>
+							</div>
+						</button>
+					</li>
+				</ul>
+			</div>
+			<div class="link-2" style="padding: 0 !important;">
+				<ul>
+					<li class="mx-auto mb-4 w-full list-none">
+						<button onclick={() => openModal('d')} class="w-full cursor-pointer">
+							<div
+								class="news-list flex border-r-2 p-4"
+								style="border-right-color: var(--main-text-color); left: 0 !important; right: auto !important;"
+							>
+								<div class="truncate-parent flex-col">
+									<p class="truncate-title guid-title-text ml-2 font-bold text-(--main-text-color)">
+										<i class="fa-solid fa-utensils mr-2"></i>校内でのお食事について
+									</p>
+								</div>
+								<div class="news-list-icon my-auto ml-auto">
+									<i class="fa-solid fa-angles-right left-auto mr-2"></i>
+								</div>
+							</div>
+						</button>
+						<button onclick={() => openModal('e')} class="w-full cursor-pointer">
+							<div
+								class="news-list flex border-r-2 p-4"
+								style="border-right-color: var(--main-text-color);"
+							>
+								<div class="truncate-parent flex-col">
+									<p class="truncate-title guid-title-text ml-2 font-bold text-(--main-text-color)">
+										<i class="tf26-icon-material icon-baby-bottle mr-2"></i>
+										乳幼児をお連れのご来場者様へ
+									</p>
+								</div>
+								<div class="news-list-icon my-auto ml-auto">
+									<i class="fa-solid fa-angles-right left-auto mr-2"></i>
+								</div>
+							</div>
+						</button>
+						<button onclick={() => openModal('f')} class="w-full cursor-pointer">
+							<div
+								class="news-list flex border-r-2 p-4"
+								style="border-right-color: var(--main-text-color);"
+							>
+								<div class="truncate-parent flex-col">
+									<p class="truncate-title guid-title-text ml-2 font-bold text-(--main-text-color)">
+										<i class="tf26-icon-material icon-poor-health mr-2"></i>体調不良について
+									</p>
+								</div>
+								<div class="news-list-icon my-auto ml-auto">
+									<i class="fa-solid fa-angles-right left-auto mr-2"></i>
+								</div>
+							</div>
+						</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<a href="/visitor" class="link-main">
+			<div class="link-main-underline">
+				<i class="fa-solid fa-arrow-right-long"></i>
+				<span>詳しくはこちら</span>
+			</div>
+		</a>
+	</div>
+	<!--e:ご案内-->
 	<!--e:企画情報-->
 	<!---->
 	<!--s:桐朋祭とは-->
