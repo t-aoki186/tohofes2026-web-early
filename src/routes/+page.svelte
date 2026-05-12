@@ -91,7 +91,9 @@
 <Modal bind:showModal>
 	<!--s:M.お困りの場合-->
 	{#if modalType === 'a'}
-		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">お困りの場合</p>
+		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
+			<i class="fa-solid fa-circle-info mr-2"></i>お困りの場合
+		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
 			迷子を発見した場合、落とし物をした場合、その他お困りの際は、お気軽にお近くの桐朋祭スタッフまでお声がけください。
@@ -102,7 +104,9 @@
 		<!---->
 		<!--s:M.お支払いについて-->
 	{:else if modalType === 'b'}
-		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">お支払いについて</p>
+		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
+			<i class="fa-solid fa-money-check-dollar mr-2"></i>お支払いについて
+		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
 			今年度から、生徒による飲食団体に限り<span class="font-bold text-red-600"
@@ -123,7 +127,9 @@
 		<!---->
 		<!--s:M.災害が発生した場合-->
 	{:else if modalType === 'c'}
-		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">災害が発生した場合</p>
+		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
+			<i class="fa-solid fa-circle-exclamation mr-2"></i>災害が発生した場合
+		</p>
 		<hr class="main-hr" />
 		<p class="mb-2 leading-[1.8rem]">
 			<span class="font-bold">地震が発生した場合 …</span>
@@ -147,23 +153,22 @@
 		<!---->
 		<!--s:M.校内でのお食事について-->
 	{:else if modalType === 'd'}
-		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">
-			校内でのお食事について
+		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
+			<i class="fa-solid fa-utensils mr-2"></i>校内でのお食事について
 		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
 			水分補給は校内どこでも可能ですが、お食事は指定された場所（食堂、屋台スペースのテント、特別教室5・6）以外ではご遠慮ください。
-			<br/>
-			また、校内で出たゴミは、指定の場所に分別をして処分していただきますようお願いいたします。<br
-			/>
+			<br />
+			また、校内で出たゴミは、指定の場所に分別をして処分していただきますようお願いいたします。<br />
 			<a href="/visitor/#campus_map">詳しはこちらの校内マップをご覧ください。</a>
 		</p>
 		<!--e:M.校内でのお食事について-->
 		<!---->
 		<!--s:M.乳幼児をお連れのご来場者様へ-->
 	{:else if modalType === 'e'}
-		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">
-			小さなお子様をお連れの方へ
+		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
+			<i class="tf26-icon-material icon-baby-bottle mr-2"></i>小さなお子様をお連れの方へ
 		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
@@ -180,7 +185,9 @@
 		<!---->
 		<!--s:M.体調不良について-->
 	{:else if modalType === 'f'}
-		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">体調がすぐれない場合</p>
+		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
+			<i class="tf26-icon-material icon-poor-health mr-2"></i>体調がすぐれない場合
+		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
 			体調がすぐれない場合、ご気分の悪い場合は、決して無理をなさらず、お近くの桐朋祭スタッフまでお声がけください。
@@ -353,10 +360,10 @@
 	</div>
 	<!--e:アクセス-->
 	<!---->
-	<!--s:ご案内-->
+	<!--s:来場者の皆様へ-->
 	<div class="container m-auto mt-10 rounded-xl bg-(--title-bg-color)" data-aos="fade-up">
 		<p use:reveal class="tf26-page-title" style="view-transition-name: tfvisitortitle-hero;">
-			{#each 'ご案内'.split('') as char, i}
+			{#each '来場者の皆様へ'.split('') as char, i}
 				<span class="char" style={`--d: ${i * 0.12}s`}>{char}</span>
 			{/each}
 		</p>
@@ -440,7 +447,7 @@
 								<div class="truncate-parent flex-col">
 									<p class="truncate-title guid-title-text ml-2 font-bold text-(--main-text-color)">
 										<i class="tf26-icon-material icon-baby-bottle mr-2"></i>
-										乳幼児をお連れのご来場者様へ
+										小さなお子様をお連れの方へ
 									</p>
 								</div>
 								<div class="news-list-icon my-auto ml-auto">
@@ -455,7 +462,7 @@
 							>
 								<div class="truncate-parent flex-col">
 									<p class="truncate-title guid-title-text ml-2 font-bold text-(--main-text-color)">
-										<i class="tf26-icon-material icon-poor-health mr-2"></i>体調不良について
+										<i class="tf26-icon-material icon-poor-health mr-2"></i>体調がすぐれない場合
 									</p>
 								</div>
 								<div class="news-list-icon my-auto ml-auto">
@@ -474,7 +481,7 @@
 			</div>
 		</a>
 	</div>
-	<!--e:ご案内-->
+	<!--e:来場者の皆様へ-->
 	<!--e:企画情報-->
 	<!---->
 	<!--s:桐朋祭とは-->
