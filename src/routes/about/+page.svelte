@@ -59,7 +59,15 @@
 			<h1 class="tf26-section-title">桐朋祭に寄せて / Message</h1>
 			<div class="grid-2-container mt-4 gap-2">
 				<div class="grid-2-item ap-message-container rounded-lg">
-					<h1 class="text-center text-xl font-bold text-(--main-text-color) mb-2">校長あいさつ</h1>
+					<div class="my-2 text-center">
+						<h1
+							class="justify-content mb-2 inline rounded-sm px-2 py-1 text-xl font-bold text-white"
+							style="background-color: var(--main-text-color);"
+						>
+							校長あいさつ
+						</h1>
+					</div>
+
 					<p class="mb-2">&nbsp;桐朋祭にようこそお越しくださいました。</p>
 					<p class="mb-2">
 						一つひとつの参加団体が創り出したいもの、そして、その団体に属する一人ひとりが表現したいものを、納得いくまで練り上げることで、桐朋祭ができあがります。彼らの発表一つひとつを目にし、じっくり耳を傾けていただければ幸いに存じます。
@@ -74,7 +82,14 @@
 					</p>
 				</div>
 				<div class="grid-2-item ap-message-container rounded-lg">
-					<h1 class="text-center text-xl font-bold text-(--main-text-color) mb-2">委員長あいさつ</h1>
+					<div class="my-2 text-center">
+						<h1
+							class="justify-content mb-2 inline rounded-sm px-2 py-1 text-xl font-bold text-white"
+							style="background-color: var(--main-text-color);"
+						>
+							委員長あいさつ
+						</h1>
+					</div>
 					<p class="mb-2">
 						&nbsp皆さん、こんにちは。第75回桐朋祭実行委員長の松浦凛人です。本日は桐朋祭にお越しくださり、誠にありがとうございます。
 					</p>
@@ -92,16 +107,21 @@
 					</p>
 				</div>
 			</div>
-			<div class="main-link" style="border: none !important; padding: 0 !important;">
-				<div class="link-2">
+			<div class="main-link mt-4" style="border: none !important; s">
+				<div class="link-3">
 					<img
 						src="https://pic.atserver186.jp/img/tohofes/about/tohofes2026-about-message.webp"
 						loading="lazy"
 						alt="桐朋祭に寄せて / Message 校長と桐朋祭実行委員長が手でハートを作っている写真"
-						class="rounded-lg"
+						class="rounded-lg mt-4"
 					/>
 				</div>
-				<div class="link-2"></div>
+				<div class="link-4">
+					<div class="my-auto">
+						<div class="mb-4 rounded-2xl bg-gray-50 p-4"><span class="font-bold">校長:</span>&nbsp;原口大助</div>
+						<div class="mb-4 rounded-2xl bg-gray-50 p-4"><span class="font-bold">実行委員長:</span>&nbsp;松浦凛人</div>
+					</div>
+				</div>
 			</div>
 			<br />
 			<hr class="main-hr" />
@@ -136,8 +156,15 @@
 		padding: 0.4em;
 	}
 
-	.ap-message-container{
+	.ap-message-container {
 		border: 1px solid transparent;
 		border-color: var(--main-text-color);
+	}
+
+	@media (max-width: 1024px) {
+		.grid-2-container {
+			display: flex;
+			flex-direction: column;
+		}
 	}
 </style>
