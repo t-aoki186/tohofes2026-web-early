@@ -113,13 +113,17 @@
 						src="https://pic.atserver186.jp/img/tohofes/about/tohofes2026-about-message.webp"
 						loading="lazy"
 						alt="桐朋祭に寄せて / Message 校長と桐朋祭実行委員長が手でハートを作っている写真"
-						class="rounded-lg mt-4"
+						class="mt-4 rounded-lg"
 					/>
 				</div>
 				<div class="link-4">
 					<div class="my-auto">
-						<div class="mb-4 rounded-2xl bg-gray-50 p-4"><span class="font-bold">校長:</span>&nbsp;原口大助</div>
-						<div class="mb-4 rounded-2xl bg-gray-50 p-4"><span class="font-bold">実行委員長:</span>&nbsp;松浦凛人</div>
+						<div class="mb-4 rounded-2xl bg-gray-50 p-4">
+							<span class="font-bold">校長:</span>&nbsp;原口大助
+						</div>
+						<div class="mb-4 rounded-2xl bg-gray-50 p-4">
+							<span class="font-bold">実行委員長:</span>&nbsp;松浦凛人
+						</div>
 					</div>
 				</div>
 			</div>
@@ -127,7 +131,23 @@
 			<hr class="main-hr" />
 			<br />
 			<h1 class="tf26-section-title">過去の様子</h1>
-			<p>準備中です</p>
+			<div class="flex flex-wrap justify-center gap-2">
+				<article class="sp-search-result-card" style="border: none; margin: 0;">
+					<img src="https://pic.atserver186.jp/img/tohofes/past_tohofes.webp" class="rounded-xl" alt="test" />
+				</article>
+				<article class="sp-search-result-card" style="border: none; margin: 0;">
+					<img src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-1.webp" class="rounded-xl" alt="test" />
+				</article>
+				<article class="sp-search-result-card" style="border: none; margin: 0;">
+					<img src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-2.webp" class="rounded-xl" alt="test" />
+				</article>
+				<article class="sp-search-result-card" style="border: none; margin: 0;">
+					<img src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-3.webp" class="rounded-xl" alt="test" />
+				</article>
+				<article class="sp-search-result-card" style="border: none; margin: 0;">
+					<img src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-4.webp" class="rounded-xl" alt="test" />
+				</article>
+			</div>
 			<br />
 			<hr class="main-hr" />
 			<br />
