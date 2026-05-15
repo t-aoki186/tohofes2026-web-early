@@ -231,6 +231,26 @@ body {
 		max-width: 100%;
 	}
 }
+
+.grid-2-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.grid-2-item {
+	padding: 0.4em;
+}
+
+.ap-message-container {
+	border: 1px solid transparent;
+	border-color: var(--main-text-color);
+}
+
+@media (max-width: 1024px) {
+	.grid-2-container {
+		display: flex;
+		flex-direction: column;
+	}
+}
 /**/
 
 /*== 共通 ==*/
