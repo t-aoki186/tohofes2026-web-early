@@ -59,20 +59,38 @@
 			<h1 class="tf26-section-title">過去の様子</h1>
 			<div class="flex flex-wrap justify-center gap-2">
 				<article class="sp-search-result-card" style="border: none; margin: 0;">
-					<img src="https://pic.atserver186.jp/img/tohofes/past_tohofes.webp" class="rounded-xl" alt="test" />
+					<img
+						src="https://pic.atserver186.jp/img/tohofes/past_tohofes.webp"
+						class="rounded-xl"
+						alt="test"
+					/>
 				</article>
 				<article class="sp-search-result-card" style="border: none; margin: 0;">
-					<img src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-1.webp" class="rounded-xl" alt="test" />
+					<img
+						src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-1.webp"
+						class="rounded-xl"
+						alt="test"
+					/>
 				</article>
 				<article class="sp-search-result-card" style="border: none; margin: 0;">
-					<img src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-2.webp" class="rounded-xl" alt="test" />
+					<img
+						src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-2.webp"
+						class="rounded-xl"
+						alt="test"
+					/>
 				</article>
 				<article class="sp-search-result-card" style="border: none; margin: 0;">
-					<img src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-3.webp" class="rounded-xl" alt="test" />
+					<img
+						src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-3.webp"
+						class="rounded-xl"
+						alt="test"
+					/>
 				</article>
+				<!--
 				<article class="sp-search-result-card" style="border: none; margin: 0;">
 					<img src="https://pic.atserver186.jp/img/tohofes/about/past/tf25-4.webp" class="rounded-xl" alt="test" />
 				</article>
+				-->
 			</div>
 			<br />
 			<hr class="main-hr" />
