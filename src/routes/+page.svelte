@@ -134,13 +134,13 @@
 		<p class="leading-[1.8rem]">
 			<span class="font-bold">地震が発生した場合 …</span>
 			<br />
-			<span class="text-red-600 font-bold">まずはその場で身の安全を確保してください。</span
+			<span class="font-bold text-red-600">まずはその場で身の安全を確保してください。</span
 			>本校舎は耐震構造になっており、安全です。指示があるまでは校舎内に留まるようお願いします。
 		</p>
 		<p class="mb-2 leading-[1.8rem]">
 			<span class="font-bold">火災が発生した場合 …</span>
 			<br />
-			<span class="text-red-600 font-bold">火元には絶対に近づかず</span
+			<span class="font-bold text-red-600">火元には絶対に近づかず</span
 			>、速やかに近くにいる大人へ通報してください。
 			<br />
 			災害の発生後、教職員による避難誘導が開始された場合は、落ち着いてその誘導に従ってください。避難場所は東グラウンドです。
@@ -191,6 +191,27 @@
 			保健室へお連れいたします。
 		</p>
 		<!--e:M.体調不良について-->
+		<!---->
+		<!--s: 飲食の決済方法について-->
+	{:else if modalType === 'topp-important'}
+		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
+			<i class="fa-solid fa-triangle-exclamation"></i>【重要】飲食の決済方法について
+		</p>
+		<hr class="main-hr" />
+		<p class="mb-2 leading-[1.8rem]">
+			今年度から、飲食の決済方法を大きく変央しています。<br />
+			<span class="font-bold">食堂・パン売り場をご利用の場合</span>と、<span class="font-bold"
+				>飲食団体（屋台・喫茶）やジュース売り場をご利用の場合</span
+			>
+			<br />
+			で決済方法が以下の通り異なりますので、あらかじめご確認ください。
+		</p>
+		<img
+			src="https://pic.atserver186.jp/img/tohofes/top-page/top-page-important-1.webp"
+			alt="「食堂・パン売り場」と「飲食団体（屋台・喫茶）」に関する支払い方法の案内。左側には食堂・パン売り場の説明があり、購入時には硬貨と千円札のみ利用できることが明記されている。左側には飲食団体の説明があり、交通系ICカード(モバイルSuica等を含む)のみが利用できることが明記されている。"
+			class="w-full"
+		/>
+		<!--e: 飲食の決済方法について-->
 	{/if}
 </Modal>
 
@@ -233,20 +254,25 @@
 </div>
 
 <main>
-	<!--s:来場者の皆様へ-->
+	<!--s: 重要-->
 	<div class="tp-info container mx-auto mt-10 rounded-xl p-4" data-aos="fade-up">
-		<p class="mb-2 text-center font-bold"><i class="fa-solid fa-circle-info"></i>持ち物について</p>
-		<p class="mb-2 text-center">
-			校内は土足禁止ですので 、<strong>必ず上履きをご持参ください</strong>。
+		<p class="mb-2 text-center text-2xl font-bold">
+			<i class="fa-solid fa-triangle-exclamation"></i>飲食の決済方法について
 		</p>
-		<a href="/visitor" class="link-main">
+		<p class="mb-2 text-center text-xl">
+			今年度から、生徒による飲食団体は&nbsp;<strong class="underline">交通系ICカード決済限定</strong
+			>&nbsp;です。
+			<br />
+			駅などであらかじめチャージの上、お越しください。
+		</p>
+		<button onclick={() => openModal('topp-important')} class="link-main">
 			<div class="link-main-underline">
 				<i class="fa-solid fa-arrow-right-long"></i>
-				<span>持ち物等の詳細はこちら</span>
+				<span>詳細はこちら</span>
 			</div>
-		</a>
+		</button>
 	</div>
-	<!--e:来場者の皆様へ-->
+	<!--e: 重要-->
 	<!---->
 	<!--s:お知らせ-->
 	<div class="container mx-auto mt-10" data-aos="fade-up">
@@ -307,55 +333,6 @@
 		</a>
 	</div>
 	<!--e:お知らせ-->
-	<!---->
-	<!--s:アクセス-->
-	<div class="container m-auto mt-10 rounded-xl bg-(--title-bg-color)" data-aos="fade-up">
-		<p use:reveal class="tf26-page-title">
-			{#each 'アクセス'.split('') as char, i}
-				<span class="char" style={`--d: ${i * 0.12}s`}>{char}</span>
-			{/each}
-		</p>
-	</div>
-	<div class="container mx-auto mt-4 mb-12" data-aos="fade-up">
-		<div class="main-link">
-			<div class="link-2">
-				<div class="map-text">
-					<p class="my-auto text-xl text-(--main-text-color)">
-						桐朋中学・高等学校<br />〒186-0004<br /><i class="fa-solid fa-location-dot mr-1 text-xs"
-						></i>東京都国立市中3-1-10
-					</p>
-				</div>
-				<hr class="main-hr" />
-				<div class="map-text">
-					<p class="my-auto text-xl text-(--main-text-color)">
-						<i class="fa-solid fa-train mr-1 text-xs"></i>JR中央線国立駅より徒歩20分<br /><i
-							class="fa-solid fa-train mr-1 text-xs"
-						></i>JR南武線谷保駅より徒歩15分
-					</p>
-				</div>
-			</div>
-			<div class="link-2">
-				<iframe
-					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.4746059148924!2d139.44237747639895!3d35.68993672949453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e3f60c18b89b%3A0xec006afe5f872d28!2z5qGQ5pyL5Lit5a2m5qCh44O75qGQ5pyL6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1771772582613!5m2!1sja!2sjp"
-					width="100%"
-					height="450"
-					loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"
-					title="Google Map"
-					class="rounded-lg"
-					style="border:0;"
-				></iframe>
-			</div>
-		</div>
-		<br />
-		<a href="/access" class="link-main">
-			<div class="link-main-underline">
-				<i class="fa-solid fa-arrow-right-long"></i>
-				<span>アクセスの詳細はこちら</span>
-			</div>
-		</a>
-	</div>
-	<!--e:アクセス-->
 	<!---->
 	<!--s:来場者の皆様へ-->
 	<div class="container m-auto mt-10 rounded-xl bg-(--title-bg-color)" data-aos="fade-up">
@@ -479,7 +456,55 @@
 		</a>
 	</div>
 	<!--e:来場者の皆様へ-->
-	<!--e:企画情報-->
+	<!---->
+	<!--s:アクセス-->
+	<div class="container m-auto mt-10 rounded-xl bg-(--title-bg-color)" data-aos="fade-up">
+		<p use:reveal class="tf26-page-title">
+			{#each 'アクセス'.split('') as char, i}
+				<span class="char" style={`--d: ${i * 0.12}s`}>{char}</span>
+			{/each}
+		</p>
+	</div>
+	<div class="container mx-auto mt-4 mb-12" data-aos="fade-up">
+		<div class="main-link">
+			<div class="link-2">
+				<div class="map-text">
+					<p class="my-auto text-xl text-(--main-text-color)">
+						桐朋中学・高等学校<br />〒186-0004<br /><i class="fa-solid fa-location-dot mr-1 text-xs"
+						></i>東京都国立市中3-1-10
+					</p>
+				</div>
+				<hr class="main-hr" />
+				<div class="map-text">
+					<p class="my-auto text-xl text-(--main-text-color)">
+						<i class="fa-solid fa-train mr-1 text-xs"></i>JR中央線国立駅より徒歩20分<br /><i
+							class="fa-solid fa-train mr-1 text-xs"
+						></i>JR南武線谷保駅より徒歩15分
+					</p>
+				</div>
+			</div>
+			<div class="link-2">
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.4746059148924!2d139.44237747639895!3d35.68993672949453!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018e3f60c18b89b%3A0xec006afe5f872d28!2z5qGQ5pyL5Lit5a2m5qCh44O75qGQ5pyL6auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1771772582613!5m2!1sja!2sjp"
+					width="100%"
+					height="450"
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"
+					title="Google Map"
+					class="rounded-lg"
+					style="border:0;"
+				></iframe>
+			</div>
+		</div>
+		<br />
+		<a href="/access" class="link-main">
+			<div class="link-main-underline">
+				<i class="fa-solid fa-arrow-right-long"></i>
+				<span>アクセスの詳細はこちら</span>
+			</div>
+		</a>
+	</div>
+	<!--e:アクセス-->
 	<!---->
 	<!--s:桐朋祭とは-->
 	<div class="container m-auto mt-10 rounded-xl bg-(--title-bg-color)" data-aos="fade-up">

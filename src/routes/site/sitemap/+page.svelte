@@ -31,7 +31,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="/vistor" target="_blank">
+						<a href="/visitor">
 							<span>来場者の皆様へ</span>
 						</a>
 					</li>
@@ -41,12 +41,12 @@
 						</a>
 					</li>
 					<li>
-						<a href="/news" target="_blank">
+						<a href="/news">
 							<span>お知らせ</span>
 						</a>
 					</li>
 					<li>
-						<a href="/site/info" target="_blank">
+						<a href="/site/info">
 							<span>サイト情報</span>
 						</a>
 					</li>
@@ -94,7 +94,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://2026.tcc-archive.club" target="_blank">
+						<a href="https://fes.tcc-archive.club/2026/" target="_blank">
 							<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 							<span>コンピューター部桐朋祭用特設HP</span>
 						</a>
