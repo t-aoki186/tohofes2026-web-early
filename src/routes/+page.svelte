@@ -109,16 +109,17 @@
 		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
-			今年度から、生徒による飲食団体に限り<span class="font-bold text-red-600"
-				>「完全キャッシュレス決済」</span
-			>を導入しています。
+			今年度から、<span class="font-bold text-red-600"
+				>生徒による飲食団体（屋台・喫茶）とジュース売り場は、交通系ICカード決済限定です。</span
+			><br />
+			現金やクレジットカード、PayPayなどの他決済サービスはご利用いただけませんのでご注意ください。
 		</p>
-		<p class="leading-[1.8rem] font-bold">
-			飲食団体とジュース売り場では、<span class="text-red-600"
-				><span class="underline">交通系ICカードのみ</span>ご利用いただけます。</span
-			>
+		<p class="mt-1 leading-[1.8rem]">
+			1階の食堂・パン売り場をご利用の場合は、食堂内の券売機または手売り食券売り場で、あらかじめ「食堂用食券」をお買い求めください。
 			<br />
-			現金やクレジットカード、PayPayなどの他決済サービスはご利用いただけ ませんのでご注意ください。
+			<span class="font-bold text-red-600"
+				>食堂用食券の購入は<span class="underline">現金のみ利用可能</span>です</span
+			>（キャッシュレス決済はご利用いただけません）のでご了承ください。
 		</p>
 		<a href="/visitor/#payment" class="mt-2 text-(--main-text-color)"
 			><i class="fa-solid fa-link mr-2 text-sm"></i>詳しくはこちらをご覧ください
@@ -132,16 +133,16 @@
 		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
-			<span class="font-bold">地震が発生した場合 …</span>
+			<span class="font-bold">地震が発生した場合･･･</span>
 			<br />
 			<span class="font-bold text-red-600">まずはその場で身の安全を確保してください。</span
 			>本校舎は耐震構造になっており、安全です。指示があるまでは校舎内に留まるようお願いします。
 		</p>
-		<p class="mb-2 leading-[1.8rem]">
-			<span class="font-bold">火災が発生した場合 …</span>
+		<p class="leading-[1.8rem]">
+			<span class="font-bold">火災が発生した場合･･･</span>
 			<br />
 			<span class="font-bold text-red-600">火元には絶対に近づかず</span
-			>、速やかに近くにいる大人へ通報してください。
+			>、近くの桐朋祭スタッフへ通報してください。
 			<br />
 			災害の発生後、教職員による避難誘導が開始された場合は、落ち着いてその誘導に従ってください。避難場所は東グラウンドです。
 		</p>
@@ -154,11 +155,15 @@
 		</p>
 		<hr class="main-hr" />
 		<p class="leading-[1.8rem]">
-			水分補給は校内どこでも可能ですが、お食事は指定された場所（食堂、屋台スペースのテント、特別教室5・6）以外ではご遠慮ください。
+			お食事は、指定された場所（食堂、屋台スペースのテント、特別教室5・6、中学棟2階休憩所）以外ではご遠慮ください。
 			<br />
-			また、校内で出たゴミは、指定の場所に分別をして処分していただきますようお願いいたします。<br />
-			<a href="/visitor/#campus_map">詳しくはこちらの校内マップをご覧ください。</a>
+			また、校内で出たゴミは、指定の場所に分別をして処分していただきますようお願いいたします。
+			<br />
 		</p>
+		<a href="/visitor/#" class="mt-2 text-(--main-text-color)"
+			><i class="fa-solid fa-link mr-2 text-sm"
+			></i>詳しい場所につきましてはこちらの校内マップををご覧ください。
+		</a>
 		<!--e:M.校内でのお食事について-->
 		<!---->
 		<!--s:M.乳幼児をお連れのご来場者様へ-->
@@ -167,16 +172,17 @@
 			<i class="tf26-icon-material icon-baby-bottle mr-2"></i>小さなお子様をお連れの方へ
 		</p>
 		<hr class="main-hr" />
-		<p class="leading-[1.8rem]">
-			小さなお子様をお連れの方は、保健室の個室で授乳が可能です。ご利用をご希望の際は、お気軽に近くの桐朋祭スタッフまでお声がけください。
+		<p class="leading-[2.2rem]">
+			小さなお子様をお連れの方で、授乳が必要な方は、総合案内所(1階)の桐朋祭スタッフまでお声がけください。
 			<br />
-			また、1階の総合案内所付近と食堂付近に、おむつ交換台つきの多目的トイレがございます。。
+			なお、1階のホール付近と食堂横中庭付近に、おむつ交換台つきの多目的トイレがございます。
 			<br />
-			<a href="/visitor/#payment" class="mt-2 text-(--main-text-color)"
-				><i class="fa-solid fa-link mr-2 text-sm"
-				></i>詳しい場所につきましてはこちらの校内マップををご覧ください。
-			</a>
+			<!--校内マップを追加する-->
 		</p>
+		<a href="/visitor/#payment" class="mt-2 text-(--main-text-color)"
+			><i class="fa-solid fa-link mr-2 text-sm"
+			></i>詳しい場所につきましてはこちらの校内マップををご覧ください。
+		</a>
 		<!--e:M.乳幼児をお連れのご来場者様へ-->
 		<!---->
 		<!--s:M.体調不良について-->
