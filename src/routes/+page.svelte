@@ -262,11 +262,11 @@
 <main>
 	<!--s: 重要-->
 	<div class="tp-info container mx-auto mt-10 rounded-xl p-4" data-aos="fade-up">
-		<p class="mb-2 text-center text-2xl font-bold">
+		<p class="mb-4 text-center text-xl font-bold md:text-2xl">
 			<i class="fa-solid fa-triangle-exclamation"></i>飲食の決済方法について
 		</p>
-		<p class="mb-2 text-center text-xl">
-			今年度から、生徒による飲食団体は&nbsp;<strong class="underline">交通系ICカード決済限定</strong
+		<p class="mb-2 text-center text-bace md:text-lg">
+			今年度から、生徒による飲食団体は&nbsp;<strong class="underline text-lg md:text-xl">交通系ICカード決済限定</strong
 			>&nbsp;です。
 			<br />
 			駅などであらかじめチャージの上、お越しください。
