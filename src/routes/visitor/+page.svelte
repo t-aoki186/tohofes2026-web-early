@@ -32,7 +32,7 @@
 		<img
 			src="https://pic.atserver186.jp/img/tohofes/visitor/visitorp-floor-map-1.webp"
 			alt="1階フロアマップ"
-			class="w-full mt-4"
+			class="mt-4 w-full"
 		/>
 		<!--e: 飲食の決済方法について-->
 	{/if}
@@ -54,7 +54,7 @@
 			</h1>
 			<p class="mb-2 leading-[1.8rem]">
 				校内は土足禁止ですので 、<span class="font-bold text-red-600 underline"
-					>必ず上履きをご持参ください</span
+					>必ず上履きと靴袋をご持参ください</span
 				>。
 			</p>
 			<h1 class="mt-4 text-2xl font-bold text-(--main-text-color)">
@@ -79,20 +79,19 @@
 				今年度から、<span class="font-bold text-red-600"
 					>生徒による飲食団体（屋台・喫茶）とジュース売り場は、交通系ICカード決済限定です。</span
 				><br />
-				現金やクレジットカード、PayPayなどの他決済サービスはご利用いただけませんのでご注文ください。
+				現金やクレジットカード、PayPayなどの他決済サービスはご利用いただけませんのでご注意ください。
 			</p>
 			<p class="mt-1 leading-[1.8rem]">
-				1階の食堂・パン売り場をご利用の場合は、食堂内の券売機またはてウイ食券売り場で、あらかじめ「食堂用食券」をお買い求めください。
+				1階の食堂・パン売り場をご利用の場合は、食堂内の券売機または手売り食券売り場で、あらかじめ「食堂用食券」をお買い求めください。
 				<br />
 				<span class="font-bold text-red-600"
-					>食堂用食券の購入は<strong class="underline">現金のみ利用可能</strong>です</span
-				>（キャッシュレス決済はごりよういただけません）のでご了承ください。
+					>食堂用食券の購入は<span class="underline">現金のみ利用可能</span>です</span
+				>（キャッシュレス決済はご利用いただけません）のでご了承ください。
 			</p>
 			<p class="mb-2 leading-[1.8rem]">
 				<span class="font-bold">食堂・パン売り場をご利用の場合</span>と、<span class="font-bold"
 					>飲食団体（屋台・喫茶）やジュース売り場をご利用の場合</span
 				>
-				<br />
 				で決済方法が以下の通り異なりますので、あらかじめご確認ください。
 			</p>
 			<img
@@ -107,16 +106,16 @@
 				<i class="fa-solid fa-circle-exclamation mr-2"></i>災害が発生した場合
 			</h1>
 			<p class="leading-[1.8rem]">
-				<span class="font-bold">地震が発生した場合 …</span>
+				<span class="font-bold">地震が発生した場合･･･</span>
 				<br />
 				<span class="font-bold text-red-600">まずはその場で身の安全を確保してください。</span
 				>本校舎は耐震構造になっており、安全です。指示があるまでは校舎内に留まるようお願いします。
 			</p>
 			<p class="mb-2 leading-[1.8rem]">
-				<span class="font-bold">火災が発生した場合 …</span>
+				<span class="font-bold">火災が発生した場合･･･</span>
 				<br />
 				<span class="font-bold text-red-600">火元には絶対に近づかず</span
-				>、速やかに近くにいる大人へ通報してください。
+				>、近くの桐朋祭スタッフへ通報してください。
 				<br />
 				災害の発生後、教職員による避難誘導が開始された場合は、落ち着いてその誘導に従ってください。避難場所は東グラウンドです。
 			</p>
@@ -127,7 +126,7 @@
 				<i class="fa-solid fa-utensils mr-2"></i>校内でのお食事について
 			</h1>
 			<p class="mb-2 leading-[1.8rem]">
-				水分補給は校内どこでも可能ですが、お食事は指定された場所（食堂、屋台スペースのテント、特別教室5・6）以外ではご遠慮ください。
+				お食事は、指定された場所（食堂、屋台スペースのテント、特別教室5・6、中学棟2階休憩所）以外ではご遠慮ください。
 				<br />
 				また、校内で出たゴミは、指定の場所に分別をして処分していただきますようお願いいたします。
 				<br />
@@ -140,9 +139,11 @@
 				<i class="tf26-icon-material icon-baby-bottle mr-2"></i>小さなお子様をお連れの方へ
 			</h1>
 			<p class="mb-2 leading-[1.8rem]">
-				小さなお子様をお連れの方は、保健室の個室で授乳が可能です。ご利用をご希望の際は、お気軽に近くの桐朋祭スタッフまでお声がけください。
+				小さなお子様をお連れの方で、授乳が必要な方は、総合案内所(1階)の桐朋祭スタッフまでお声がけください。
 				<br />
-				また、1階の総合案内所付近と食堂付近に、おむつ交換台つきの多目的トイレがございます。。
+				なお、1階のホール付近と食堂横中庭付近に、おむつ交換台つきの多目的トイレがございます。
+				<br/>
+				<!--校内マップを追加する-->
 			</p>
 			<button onclick={() => openModal('visitorp-floor-map')} class="link-main">
 				<div class="link-main-underline">
