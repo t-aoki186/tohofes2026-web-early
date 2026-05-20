@@ -388,7 +388,7 @@
 				</li>
 				<li>
 					<p class="ml-3 cursor-no-drop text-xs tracking-wider text-gray-500 transition">
-						団体/飲食/企画/イベント
+						企画一覧
 					</p>
 				</li>
 				<li>
@@ -413,7 +413,7 @@
 				<li><a href="/" class="header-text">ホーム</a></li>
 				<li><a href="/about" class="header-text">桐朋祭とは</a></li>
 				<li><a href="/visitor" class="header-text">来場者の皆様へ</a></li>
-				<li><p class="cursor-no-drop text-gray-500">団体/飲食/企画/イベント</p></li>
+				<li><p class="cursor-no-drop text-gray-500">企画一覧</p></li>
 				<li><p class="cursor-no-drop text-gray-500">タイムテーブル</p></li>
 				<li>
 					<button class="header-text" onclick={() => (otherOpen = !otherOpen)}>その他</button>
@@ -540,7 +540,7 @@
 					</ul>
 				</div>
 				<div class="footer-flex-content">
-					<h4>参加団体</h4>
+					<h4>企画一覧</h4>
 					<ul>
 						<li></li>
 					</ul>
@@ -620,7 +620,7 @@
 					</ul>
 				</details>
 				<details class="accordion-main mb-4 min-w-full">
-					<summary class="font-bold">参加団体</summary>
+					<summary class="font-bold">企画一覧</summary>
 					<ul class="pt-2 pl-2">
 						<li></li>
 					</ul>

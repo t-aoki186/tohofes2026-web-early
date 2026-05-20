@@ -61,7 +61,7 @@
 				<h2
 					class="mt-2 border-l-[3px] border-(--main-text-color) pl-2 text-lg font-bold tracking-[3px] text-(--main-text-color)"
 				>
-					参加団体
+					企画一覧
 				</h2>
 				<ul class="sitemap-ul">
 					<li class="flex flex-col gap-2.5">
