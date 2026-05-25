@@ -1,0 +1,359 @@
+<script lang="ts">
+	const { data } = $props();
+
+	import { onMount, onDestroy, tick } from 'svelte';
+	import { reveal } from '$lib/reveal';
+	import { getUrl } from '$lib/utils/getUrl';
+	import { page } from '$app/state';
+
+	import Modal from '$lib/components/Modal_Search.svelte';
+	let show = $state(false);
+
+	let pageTitle = '参加団体';
+
+	// --- 絞り込み検索用
+	type QueryKey = 'category' | 'place' | 'date';
+
+	function getChangedUrl(key: QueryKey, value: string | number): string {
+		const searchParams = new URLSearchParams(page.url.searchParams);
+		searchParams.set(key, String(value));
+		return `?${searchParams.toString()}`;
+	}
+
+	// アクティブ判定用のヘルパー関数
+	function isActive(key: QueryKey, value: string | number): boolean {
+		const currentValue = page.url.searchParams.get(key);
+		return currentValue === String(value);
+	}
+
+	// date用のアクティブ判定（特別な値の場合）
+	function isDateActive(value: string): boolean {
+		const currentDate = page.url.searchParams.get('date');
+		return currentDate === value;
+	}
+
+	// この close 関数を追加または修正
+	const close = () => {
+		show = false;
+	};
+
+	// 結果をランダム表示するためのシャッフル関数
+	function shuffle<T>(array: T[]): T[] {
+		const a = array.slice();
+		for (let i = a.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			const tmp = a[i];
+			a[i] = a[j];
+			a[j] = tmp;
+		}
+		return a;
+	}
+
+	// バッチ読み込み設定
+	const BATCH_SIZE = 15;
+	let allResults: any[] = $state([]);
+	let visibleResults: any[] = $state([]);
+	let loadedCount = $state(0);
+	let lastItem: HTMLElement | null = $state(null);
+	let lastObserved: HTMLElement | null = null;
+	let observer: IntersectionObserver | null = null;
+
+	async function loadMore() {
+		if (loadedCount >= allResults.length) return;
+		const next = allResults.slice(loadedCount, loadedCount + BATCH_SIZE);
+		visibleResults = [...visibleResults, ...next];
+		loadedCount = visibleResults.length;
+
+		// wait for DOM to update and then rebind observer to the new last item
+		await tick();
+		if (!observer) return;
+		if (lastObserved && lastObserved !== lastItem) {
+			observer.unobserve(lastObserved);
+			lastObserved = null;
+		}
+		if (lastItem && lastObserved !== lastItem) {
+			lastObserved = lastItem;
+			observer.observe(lastObserved);
+		}
+
+	}
+
+	onMount(async () => {
+		// initialize results from SSR/props data on client
+		allResults = data?.results ? shuffle(data.results) : [];
+		visibleResults = allResults.slice(0, BATCH_SIZE);
+		loadedCount = visibleResults.length;
+
+		observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) loadMore();
+				});
+			},
+			{ root: null, rootMargin: '0px', threshold: 0.6 }
+		);
+
+		// ensure DOM bindings are ready and start observing the current last item
+		await tick();
+		if (lastItem) {
+			if (lastObserved && observer) observer.unobserve(lastObserved);
+			lastObserved = lastItem;
+			observer.observe(lastObserved);
+		}
+	});
+
+
+
+	onDestroy(() => {
+		if (observer && lastObserved) observer.unobserve(lastObserved);
+		observer = null;
+	});
+</script>
+
+<svelte:head>
+	<title>{pageTitle} | {data.site_title}</title>
+	<meta property="og:title" content="{pageTitle} | {data.site_title}" />
+</svelte:head>
+
+<main class="mt-15 mr-1 ml-1 min-h-screen">
+	<Modal bind:showModal={show}>
+		<p class="mb-4 text-center text-xl font-bold text-(--main-text-color)">絞り込み検索</p>
+		<div>
+			<div class="mb-4">
+				<p class="tf26-dialog-title mb-2">公開日</p>
+				<a
+					href={getChangedUrl('date', '1')}
+					class="sp-refined-date"
+					class:active={isDateActive('1')}
+				>
+					<p class="text-lg text-(--main-text-color)">06/06(土)</p>
+				</a>
+				<a
+					href={getChangedUrl('date', '2')}
+					class="sp-refined-date"
+					class:active={isDateActive('2')}
+				>
+					<p class="text-lg text-(--main-text-color)">06/07(日)</p>
+				</a>
+				<a
+					href={getChangedUrl('date', '3')}
+					class="sp-refined-date"
+					class:active={isDateActive('3')}
+				>
+					<p class="text-lg text-(--main-text-color)">06/08(月)</p>
+				</a>
+			</div>
+			<div class="mb-2">
+				<p class="tf26-dialog-title mb-2">カテゴリー</p>
+				<a
+					href={getChangedUrl('category', '')}
+					class:active={isActive('category', '')}
+					class="sp-refined-date"
+				>
+					<p class="text-lg text-(--main-text-color)">すべて</p>
+				</a>
+				<p class="text-lg text-(--main-text-color)">参加団体</p>
+				<a
+					href={getChangedUrl('category', 'club')}
+					class="sp-refined-date-s"
+					class:active={isActive('category', 'club')}
+				>
+					<p class="text-sm text-(--main-text-color)">部活</p>
+				</a>
+				<a
+					href={getChangedUrl('category', 'food')}
+					class="sp-refined-date-s"
+					class:active={isActive('category', 'food')}
+				>
+					<p class="text-sm text-(--main-text-color)">飲食</p>
+				</a>
+				<a
+					href={getChangedUrl('category', 'bands')}
+					class="sp-refined-date-s"
+					class:active={isActive('category', 'bands')}
+				>
+					<p class="text-sm text-(--main-text-color)">バンド</p>
+				</a>
+				<a
+					href={getChangedUrl('category', 'stage')}
+					class="sp-refined-date-s"
+					class:active={isActive('category', 'stage')}
+				>
+					<p class="text-sm text-(--main-text-color)">企画</p>
+				</a>
+				<a
+					href={getChangedUrl('category', 'event')}
+					class="sp-refined-date-s"
+					class:active={isActive('category', 'event')}
+				>
+					<p class="text-sm text-(--main-text-color)">イベント</p>
+				</a>
+				<a
+					href={getChangedUrl('category', 'student-lessons')}
+					class="sp-refined-date-s"
+					class:active={isActive('category', 'student-lessons')}
+				>
+					<p class="text-sm text-(--main-text-color)">生徒による授業</p>
+				</a>
+				<p class="text-lg text-(--main-text-color)">ブログ</p>
+				<a
+					href={getChangedUrl('category', 'organization-blogs')}
+					class="sp-refined-date-s"
+					class:active={isActive('category', 'organization-blogs')}
+				>
+					<p class="text-sm text-(--main-text-color)">参加団体ブログ</p>
+				</a>
+			</div>
+			<div>
+				<p class="tf26-dialog-title mb-2">場所</p>
+				test
+			</div>
+		</div>
+		<!--s:閉じる/リセット-->
+		<div class="mt-auto">
+			<hr class="main-hr" />
+			<div class="flex">
+				<a href="/organizations/" class="link-main">
+					<div class="link-main-underline">
+						<i class="fa-solid fa-arrow-rotate-left"></i>
+						<span>リセット</span>
+					</div>
+				</a>
+				<button onclick={close} class="link-main" type="button">
+					<div class="link-main-underline">
+						<i class="fa-solid fa-xmark"></i>
+						<span>閉じる</span>
+					</div>
+				</button>
+			</div>
+		</div>
+		<!--e:閉じる/リセット-->
+	</Modal>
+
+	<div class="container m-auto mt-25 border-b-2 border-b-(--main-text-color)">
+		<p class="tf26-page-title" style="color: black; margin-bottom: 0;">{pageTitle}</p>
+	</div>
+	<section class="container mx-auto mt-10 mb-25 rounded bg-white p-4">
+		<form class="s-search-form mb-4" action="/organizations/" method="GET">
+			<input
+				class="s-search-input"
+				type="text"
+				id="searchTerm"
+				name="search"
+				placeholder="検索..."
+			/>
+			<button
+				type="button"
+				class="m-search-button mr-4"
+				onclick={() => (show = true)}
+				title="絞り込み検索する"><i class="fa-solid fa-sliders"></i></button
+			>
+			<button class="m-search-button" type="submit" title="検索する"
+				><i class="fas fa-search"></i></button
+			>
+		</form>
+		<p class="my-4">{data.results.length}件の {pageTitle} が見つかりました。</p>
+		<div class="flex flex-wrap justify-center gap-4">
+			{#each visibleResults as item, i}
+				{#if i === visibleResults.length - 1}
+					<article bind:this={lastItem} class="sp-search-result-card">
+						<a href={getUrl(item)} class="sp-search-result-link-overlay"
+							><p class="hidden">hidden:エラー対策</p></a
+						>
+						<div class="mb-2 flex">
+							<p class="w-full text-xl font-bold text-(--main-text-color)">{item.title}</p>
+							<p class="text-right whitespace-nowrap text-(--main-text-color)">
+								<i class="fa-solid fa-location-dot mr-1 text-xs"></i>{item.location}
+							</p>
+						</div>
+						<div class="flex">
+							<div class="mr-2 flex-col" style="min-width: 0; max-width: 100%;">
+								<p
+									class="sp-search-result-text text-xs"
+									style="color: color-mix(in srgb, var(--main-text-color), transparent 50%);"
+								>
+									{item.category || 'ニュース'}
+								</p>
+								<p class="sp-search-result-heading h-1/2 text-sm text-gray-600">
+									{item.heading}
+								</p>
+								<p class="sp-search-result-text text-left-decoration items-end text-sm text-gray-600">
+									{item.body}
+								</p>
+							</div>
+							<img
+								src={item.thumbnail ||
+									'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'}
+								alt="サンプル00"
+								class="ml-auto w-1/2 rounded-lg"
+							/>
+						</div>
+					</article>
+				{:else}
+					<article class="sp-search-result-card">
+						<a href={getUrl(item)} class="sp-search-result-link-overlay"
+							><p class="hidden">hidden:エラー対策</p></a
+						>
+						<div class="mb-2 flex">
+							<p class="w-full text-xl font-bold text-(--main-text-color)">{item.title}</p>
+							<p class="text-right whitespace-nowrap text-(--main-text-color)">
+								<i class="fa-solid fa-location-dot mr-1 text-xs"></i>{item.location}
+							</p>
+						</div>
+						<div class="flex">
+							<div class="mr-2 flex-col" style="min-width: 0; max-width: 100%;">
+								<p
+									class="sp-search-result-text text-xs"
+									style="color: color-mix(in srgb, var(--main-text-color), transparent 50%);"
+								>
+									{item.category || 'ニュース'}
+								</p>
+								<p class="sp-search-result-heading h-1/2 text-sm text-gray-600">
+									{item.heading}
+								</p>
+								<p class="sp-search-result-text text-left-decoration items-end text-sm text-gray-600">
+									{item.body}
+								</p>
+							</div>
+							<img
+								src={item.thumbnail ||
+									'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'}
+								alt="サンプル00"
+								class="ml-auto w-1/2 rounded-lg"
+							/>
+						</div>
+					</article>
+				{/if}
+			{/each}
+		</div>
+
+		{#if loadedCount < allResults.length}
+			<div class="flex justify-center mt-6">
+				<button onclick={loadMore} class="link-main" type="button">もっと見る</button>
+			</div>
+		{/if}
+
+		
+	</section>
+</main>
+<ol class="main-breadcrumb container mx-auto">
+	<li><a href="/">ホーム</a></li>
+	<li>{pageTitle}</li>
+</ol>
+
+<style>
+	/* アクティブなリンクのスタイル */
+	.active {
+		font-weight: bold;
+		background-color: color-mix(in srgb, var(--main-text-color) 15%, transparent);
+		color: white;
+	}
+
+	/* sp-refined-date と sp-refined-date-s 用のアクティブスタイル */
+	.sp-refined-date.active,
+	.sp-refined-date-s.active {
+		font-weight: bold;
+		color: #0066cc;
+		position: relative;
+	}
+</style>

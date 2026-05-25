@@ -22,8 +22,11 @@
 	import { setupViewTransition } from 'sveltekit-view-transition';
 	/*モーダル*/
 	import Modal from '$lib/components/Modal.svelte';
+	/*URL生成*/
+	import { getUrl } from '$lib/utils/getUrl';
 	/*SEO*/
 	import { page } from '$app/stores';
+	import { onNavigate } from '$app/navigation';
 
 	/*s:NProgressの設定*/
 	beforeNavigate(() => {
@@ -38,8 +41,8 @@
 	});
 	/*e:NProgressの設定*/
 
-	//export
-	let { data, children } = $props();
+	type RandomItem = { title: string; type: string; id: string; category?: string };
+	let { data, children } = $props<{ data: { random?: RandomItem[] } }>();
 	let accordionOpen = $state(false);
 
 	/*s:共通変数*/
@@ -54,7 +57,7 @@
 	let isOtherClosing = $state(false);
 	let otherOpen = $state(false);
 	let pendingOpen = false;
-	/*e:ハンバーガーメニュー*/
+	/*e;ハンバーガーメニュー*/
 
 	/*s:target="_blank"モーダル*/
 	let targetUrl = $state('');
@@ -104,6 +107,7 @@
 	/*s:AOSの初期化*/
 	onMount(() => {
 		AOS.init({
+			// オプション（任意）
 			duration: 800, //アニメーションの時間（ミリ秒）
 			once: false //何度でもアニメーションを発火させる
 		});
@@ -140,9 +144,9 @@
 		skipExternalLinkConfirmation = localStorage.getItem('skipExternalLinkConfirmation') === 'true';
 	});
 
-	function openExternalLink(event) {
+	function openExternalLink(event: MouseEvent) {
 		//クリックされた要素から一番近いaタグを探す
-		const anchor = event.target.closest('a');
+		const anchor = (event.target as HTMLElement).closest('a');
 		//`target="_blank"`が設定されている場合にのみ発火
 		if (anchor && anchor.target === '_blank') {
 			if (skipExternalLinkConfirmation) {
@@ -171,6 +175,18 @@
 	}
 
 	/*e:target="_blank"モーダル*/
+
+	onNavigate((navigation) => {
+		// ブラウザが View Transitions API に対応していない場合は何もしない
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <svelte:head>
@@ -186,28 +202,13 @@
 	<meta name="keywords" content="桐朋,桐朋中学校,桐朋高校,桐朋中学高等学校,桐朋祭,学園祭,文化祭" />
 	<meta property="og:site_name" content="第75回桐朋祭(桐朋祭2026)" />
 	<meta property="og:type" content="website" />
-	<meta property="og:image" content="https://tohofes.jp/ogp.png" />
+	<!--<meta property="og:image" content="https://tohofes.jp/ogp.png" />-->
 	<meta property="og:title" content="第75回桐朋祭(桐朋祭2026)" />
 	<link rel="canonical" href={$page.url.href} />
 	<meta property="og:url" content={$page.url.href} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@tohofes_2026" />
 	<!--e:SEO-->
-	<!---->
-	<!--s:Google Analytics-->
-	<!-- Google tag (gtag.js) -->
-	<!--
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LE8CXZXGWS"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-LE8CXZXGWS');
-	</script>
--->
 </svelte:head>
 
 <Modal bind:showModal>
@@ -387,9 +388,9 @@
 					>
 				</li>
 				<li>
-					<p class="ml-3 cursor-no-drop text-xs tracking-wider text-gray-500 transition">
-						企画一覧
-					</p>
+					<a href="/organizations" class="header-text ml-3 text-xs tracking-wider transition"
+						>企画一覧</a
+					>
 				</li>
 				<li>
 					<p class="ml-3 cursor-no-drop text-xs tracking-wider text-gray-500 transition">
@@ -413,7 +414,7 @@
 				<li><a href="/" class="header-text">ホーム</a></li>
 				<li><a href="/about" class="header-text">桐朋祭とは</a></li>
 				<li><a href="/visitor" class="header-text">来場者の皆様へ</a></li>
-				<li><p class="cursor-no-drop text-gray-500">企画一覧</p></li>
+				<li><a href="/organizations" class="header-text">企画一覧</a></li>
 				<li><p class="cursor-no-drop text-gray-500">タイムテーブル</p></li>
 				<li>
 					<button class="header-text" onclick={() => (otherOpen = !otherOpen)}>その他</button>
@@ -483,7 +484,7 @@
 					>
 				</li>
 				<li>
-					<a href="https://2026.tcc-archive.club/" target="_blank" class="header-text"
+					<a href="https://fes.tcc-archive.club/2026/" target="_blank" class="header-text"
 						><i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"
 						></i>コンピューター部桐朋祭用特設HP</a
 					>
@@ -533,6 +534,8 @@
 						<li><a href="/about">桐朋祭について</a></li>
 						<li><a href="/visitor">来場者の皆様へ</a></li>
 						<li><a href="/access">本校へのアクセス</a></li>
+						<li><a href="/timetable">タイムテーブル</a></li>
+						<li><a href="/qa">よくある質問</a></li>
 						<li><a href="/news">お知らせ</a></li>
 						<li><a href="/site/info">サイト情報</a></li>
 						<li><a href="/site/sitemap">サイトマップ</a></li>
@@ -540,34 +543,47 @@
 					</ul>
 				</div>
 				<div class="footer-flex-content">
-					<h4>企画一覧</h4>
+					<h4>参加団体</h4>
 					<ul>
-						<li></li>
+						{#if data.random && data.random.length > 0}
+							{#each data.random as item}
+								<li class="flex flex-col gap-2.5">
+									<a href={getUrl(item)}>
+										<span>{item.title}</span>
+									</a>
+								</li>
+							{/each}
+						{:else}
+							<p class="text-white">参加団体の取得に失敗しました</p>
+						{/if}
+						<li class="flex flex-col gap-2.5">
+							<a href="/organizations">
+								<span>一覧はこちら</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 				<div class="footer-flex-content">
 					<h4>各種SNS / リンク</h4>
 					<ul>
 						<li>
-							<a href="https://x.com/tohofes_2026" target="_blank">
+							<a href="https://x.com" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://www.instagram.com/tohofes_2026/" target="_blank">
+							<a href="https://www.instagram.com" target="_blank">
 								<i class="fa-brands fa-instagram mr-1 text-xs"></i>
 								<span>Instagram</span>
 							</a>
 						</li>
-						<!--
 						<li>
 							<a href="https://atserver186.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>ATSocial</span>
 							</a>
 						</li>
-						-->
 						<li>
 							<a href="http://toho.ed.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
@@ -575,7 +591,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="https://2026.tcc-archive.club" target="_blank">
+							<a href="https://fes.tcc-archive.club/2026/" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>コンピューター部桐朋祭用特設HP</span>
 							</a>
@@ -613,6 +629,8 @@
 						<li><a href="/about">桐朋祭について</a></li>
 						<li><a href="/visitor">来場者の皆様へ</a></li>
 						<li><a href="/access">本校へのアクセス</a></li>
+						<li><a href="/timetable">タイムテーブル</a></li>
+						<li><a href="/qa">よくある質問</a></li>
 						<li><a href="/news">お知らせ</a></li>
 						<li><a href="/site/info">サイト情報</a></li>
 						<li><a href="/site/sitemap">サイトマップ</a></li>
@@ -620,34 +638,47 @@
 					</ul>
 				</details>
 				<details class="accordion-main mb-4 min-w-full">
-					<summary class="font-bold">企画一覧</summary>
+					<summary class="font-bold">参加団体</summary>
 					<ul class="pt-2 pl-2">
-						<li></li>
+						{#if data.random && data.random.length > 0}
+							{#each data.random as item}
+								<li class="flex flex-col gap-2.5">
+									<a href={getUrl(item)}>
+										<span>{item.title}</span>
+									</a>
+								</li>
+							{/each}
+						{:else}
+							<p class="text-white">参加団体の取得に失敗しました</p>
+						{/if}
+						<li class="flex flex-col gap-2.5">
+							<a href="/organizations">
+								<span>一覧はこちら</span>
+							</a>
+						</li>
 					</ul>
 				</details>
 				<details class="accordion-main min-w-full">
 					<summary class="font-bold">各種SNS / リンク</summary>
 					<ul class="pt-2 pl-2">
 						<li>
-							<a href="https://x.com/tohofes_2026" target="_blank">
+							<a href="https://x.com" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://www.instagram.com/tohofes_2026/" target="_blank">
+							<a href="https://www.instagram.com" target="_blank">
 								<i class="fa-brands fa-instagram mr-1 text-xs"></i>
 								<span>Instagram</span>
 							</a>
 						</li>
-						<!--
 						<li>
 							<a href="https://atserver186.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>ATSocial</span>
 							</a>
 						</li>
-						-->
 						<li>
 							<a href="http://toho.ed.jp" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
@@ -655,7 +686,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="https://2026.tcc-archive.club" target="_blank">
+							<a href="https://fes.tcc-archive.club/2026/" target="_blank">
 								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 								<span>コンピューター部桐朋祭用特設HP</span>
 							</a>

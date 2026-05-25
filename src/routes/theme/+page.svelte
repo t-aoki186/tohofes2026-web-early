@@ -19,7 +19,7 @@
 	<section class="container mx-auto mt-15 mb-25">
 		<div class="min-w-full">
 			<img
-				src="https://pic.atserver186.jp/img/tohofes/about/logo-main.webp"
+				src="https://pic.atserver186.jp/img/tohofes/about/logo-main-v2.webp"
 				alt="第75回桐朋祭ロゴ"
 				class="m-auto ml-auto mb-4 h-auto w-[20%]"
 				style="view-transition-name: tftheme-hero;"

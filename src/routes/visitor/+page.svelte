@@ -29,11 +29,6 @@
 			<i class="fa-solid fa-map"></i>フロアマップ
 		</p>
 		<hr class="main-hr" />
-		<img
-			src="https://pic.atserver186.jp/img/tohofes/visitor/visitorp-floor-map-1.webp"
-			alt="1階フロアマップ"
-			class="mt-4 w-full"
-		/>
 		<!--e: 飲食の決済方法について-->
 	{/if}
 </Modal>
@@ -130,8 +125,9 @@
 				<br />
 				また、校内で出たゴミは、指定の場所に分別をして処分していただきますようお願いいたします。
 				<br />
-				<!--校内マップを追加する-->
+				詳しくはパンフレットのP.9からの飲食情報をご確認ください。
 			</p>
+			<!--電子版パンフレットのリンクを張る-->
 			<!--e: 校内でのお食事について-->
 			<!---->
 			<!--s: 小さなお子様をお連れの方へ-->
@@ -143,14 +139,9 @@
 				<br />
 				なお、1階のホール付近と食堂横中庭付近に、おむつ交換台つきの多目的トイレがございます。
 				<br/>
-				<!--校内マップを追加する-->
+				詳しい場所はパンフレットのP.21のフロアマップをご参照ください。
+				<br /><span class="text-sm">(※電子版パンフレットは安全上の理由からフロアマップを非表示（または黒塗り）にしております。お手数ですが、詳細は紙のパンフレットにてご確認ください。)</span>
 			</p>
-			<button onclick={() => openModal('visitorp-floor-map')} class="link-main">
-				<div class="link-main-underline">
-					<i class="fa-solid fa-arrow-right-long"></i>
-					<span>詳しい場所はこちらをご覧ください</span>
-				</div>
-			</button>
 			<!--e: 小さなお子様をお連れの方へ-->
 			<!---->
 			<!--s: 体調がすぐれない場合-->

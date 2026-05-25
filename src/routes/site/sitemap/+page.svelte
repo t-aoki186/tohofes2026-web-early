@@ -3,6 +3,8 @@
 
 	import { onMount } from 'svelte';
 	import { reveal } from '$lib/reveal';
+	import { getUrl } from '$lib/utils/getUrl';
+	import { page } from '$app/state';
 
 	let pageTitle = 'サイトマップ';
 </script>
@@ -27,11 +29,11 @@
 				<ul class="sitemap-ul">
 					<li>
 						<a href="/about">
-							<span>桐朋祭について</span>
+							<span>桐朋祭とは</span>
 						</a>
 					</li>
 					<li>
-						<a href="/visitor">
+						<a href="/vistor" target="_blank">
 							<span>来場者の皆様へ</span>
 						</a>
 					</li>
@@ -41,12 +43,22 @@
 						</a>
 					</li>
 					<li>
-						<a href="/news">
+						<a href="/timetable">
+							<span>タイムテーブル</span>
+						</a>
+					</li>
+					<li>
+						<a href="/qa" target="_blank">
+							<span>よくある質問</span>
+						</a>
+					</li>
+					<li>
+						<a href="/news" target="_blank">
 							<span>お知らせ</span>
 						</a>
 					</li>
 					<li>
-						<a href="/site/info">
+						<a href="/site/info" target="_blank">
 							<span>サイト情報</span>
 						</a>
 					</li>
@@ -61,10 +73,24 @@
 				<h2
 					class="mt-2 border-l-[3px] border-(--main-text-color) pl-2 text-lg font-bold tracking-[3px] text-(--main-text-color)"
 				>
-					企画一覧
+					参加団体
 				</h2>
 				<ul class="sitemap-ul">
+					{#if data.random && data.random.length > 0}
+						{#each data.random as item}
+							<li class="flex flex-col gap-2.5">
+								<a href={getUrl(item)}>
+									<span>{item.title}</span>
+								</a>
+							</li>
+						{/each}
+					{:else}
+						<p>お知らせの取得に失敗しました</p>
+					{/if}
 					<li class="flex flex-col gap-2.5">
+						<a href="/organizations">
+							<span>一覧はこちら</span>
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -76,15 +102,21 @@
 				</h2>
 				<ul class="sitemap-ul">
 					<li>
-						<a href="https://x.com/tohofes_2026" target="_blank">
+						<a href="https://x.com" target="_blank">
 							<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 							<span>X(Twitter)</span>
 						</a>
 					</li>
 					<li>
-						<a href="https://www.instagram.com/tohofes_2026/" target="_blank">
+						<a href="https://www.instagram.com" target="_blank">
 							<i class="fa-brands fa-instagram mr-1 text-xs"></i>
 							<span>Instagram</span>
+						</a>
+					</li>
+					<li>
+						<a href="https://atserver186.jp" target="_blank">
+							<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
+							<span>ATSocial</span>
 						</a>
 					</li>
 					<li>
@@ -94,7 +126,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="https://fes.tcc-archive.club/2026/" target="_blank">
+						<a href="https://2026.tcc-archive.club" target="_blank">
 							<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
 							<span>コンピューター部桐朋祭用特設HP</span>
 						</a>
