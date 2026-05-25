@@ -555,7 +555,7 @@ body {
 	position: relative;
 	display: inline-block;
 	transition: 0.3s;
-	border: 1px solid var(--main-text-color);
+	border: 1px solid #6b7280;
 	margin: 2px;
 	padding: 4px 10px;
 	border-radius: 5px;

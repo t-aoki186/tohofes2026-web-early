@@ -36,20 +36,6 @@
 	const close = () => {
 		show = false;
 	};
-
-	// 結果をランダム表示するためのシャッフル関数と配列
-	function shuffle<T>(array: T[]): T[] {
-		const a = array.slice();
-		for (let i = a.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1));
-			const tmp = a[i];
-			a[i] = a[j];
-			a[j] = tmp;
-		}
-		return a;
-	}
-
-	let results = data?.results ? shuffle(data.results) : [];
 </script>
 
 <svelte:head>
@@ -63,27 +49,15 @@
 		<div>
 			<div class="mb-4">
 				<p class="tf26-dialog-title mb-2">公開日</p>
-				<a
-					href={getChangedUrl('date', '1')}
-					class="sp-refined-date"
-					class:active={isDateActive('1')}
-				>
-					<p class="text-lg text-(--main-text-color)">06/06(土)</p>
-				</a>
-				<a
-					href={getChangedUrl('date', '2')}
-					class="sp-refined-date"
-					class:active={isDateActive('2')}
-				>
-					<p class="text-lg text-(--main-text-color)">06/07(日)</p>
-				</a>
-				<a
-					href={getChangedUrl('date', '3')}
-					class="sp-refined-date"
-					class:active={isDateActive('3')}
-				>
-					<p class="text-lg text-(--main-text-color)">06/08(月)</p>
-				</a>
+				<p class="sp-refined-date cursor-not-allowed">
+					<span class="text-lg text-gray-500">06/06(土)</span>
+				</p>
+				<p class="sp-refined-date cursor-not-allowed">
+					<span class="text-lg text-gray-500">06/07(日)</span>
+				</p>
+				<p class="sp-refined-date cursor-not-allowed">
+					<span class="text-lg text-gray-500">06/08(月)</span>
+				</p>
 			</div>
 			<div class="mb-2">
 				<p class="tf26-dialog-title mb-2">カテゴリー</p>
@@ -96,11 +70,11 @@
 				</a>
 				<p class="text-lg text-(--main-text-color)">参加団体</p>
 				<a
-					href={getChangedUrl('category', 'club')}
+					href={getChangedUrl('category', 'general')}
 					class="sp-refined-date-s"
-					class:active={isActive('category', 'club')}
+					class:active={isActive('category', 'general')}
 				>
-					<p class="text-sm text-(--main-text-color)">部活</p>
+					<p class="text-sm text-(--main-text-color)">一般</p>
 				</a>
 				<a
 					href={getChangedUrl('category', 'food')}
@@ -124,11 +98,11 @@
 					<p class="text-sm text-(--main-text-color)">企画</p>
 				</a>
 				<a
-					href={getChangedUrl('category', 'event')}
+					href={getChangedUrl('category', 'other')}
 					class="sp-refined-date-s"
-					class:active={isActive('category', 'event')}
+					class:active={isActive('category', 'other')}
 				>
-					<p class="text-sm text-(--main-text-color)">イベント</p>
+					<p class="text-sm text-(--main-text-color)">その他</p>
 				</a>
 				<a
 					href={getChangedUrl('category', 'student-lessons')}
@@ -146,10 +120,12 @@
 					<p class="text-sm text-(--main-text-color)">参加団体ブログ</p>
 				</a>
 			</div>
+			<!--
 			<div>
 				<p class="tf26-dialog-title mb-2">場所</p>
 				test
 			</div>
+			-->
 		</div>
 		<!--s:閉じる/リセット-->
 		<div class="mt-auto">
@@ -196,7 +172,7 @@
 		</form>
 		<p class="my-4">{data.results.length}件の {pageTitle} が見つかりました。</p>
 		<div class="flex flex-wrap justify-center gap-4">
-			{#each results as item}
+			{#each data.results as item}
 				<article class="sp-search-result-card">
 					<a href={getUrl(item)} class="sp-search-result-link-overlay"
 						><p class="hidden">hidden:エラー対策</p></a
