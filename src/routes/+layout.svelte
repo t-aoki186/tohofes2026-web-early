@@ -245,7 +245,7 @@
 				<div class="tp-search-method">
 					<a href="/timetable" class="dash-link">
 						<i class="fa-solid fa-list"></i>
-						<p>タイムテーブルから<br />探す</p>
+						<p>企画タイムテーブルから<br />探す</p>
 					</a>
 				</div>
 			</div>
@@ -389,12 +389,17 @@
 				</li>
 				<li>
 					<a href="/organizations" class="header-text ml-3 text-xs tracking-wider transition"
-						>企画一覧</a
+						>参加団体</a
+					>
+				</li>
+					<li>
+					<a href="/foods" class="header-text ml-3 text-xs tracking-wider transition"
+						>飲食団体</a
 					>
 				</li>
 				<li>
 					<p class="ml-3 cursor-no-drop text-xs tracking-wider text-gray-500 transition">
-						タイムテーブル
+						企画タイムテーブル
 					</p>
 				</li>
 				<li class="mr-6">
@@ -414,8 +419,9 @@
 				<li><a href="/" class="header-text">ホーム</a></li>
 				<li><a href="/about" class="header-text">桐朋祭とは</a></li>
 				<li><a href="/visitor" class="header-text">来場者の皆様へ</a></li>
-				<li><a href="/organizations" class="header-text">企画一覧</a></li>
-				<li><p class="cursor-no-drop text-gray-500">タイムテーブル</p></li>
+				<li><a href="/organizations" class="header-text">参加団体</a></li>
+				<li><a href="/foods" class="header-text">飲食団体</a></li>
+				<li><p class="cursor-no-drop text-gray-500">企画タイムテーブル</p></li>
 				<li>
 					<button class="header-text" onclick={() => (otherOpen = !otherOpen)}>その他</button>
 				</li>
@@ -534,7 +540,7 @@
 						<li><a href="/about">桐朋祭について</a></li>
 						<li><a href="/visitor">来場者の皆様へ</a></li>
 						<li><a href="/access">本校へのアクセス</a></li>
-						<li><a href="/timetable">タイムテーブル</a></li>
+						<li><a href="/timetable">企画タイムテーブル</a></li>
 						<li><a href="/qa">よくある質問</a></li>
 						<li><a href="/news">お知らせ</a></li>
 						<li><a href="/site/info">サイト情報</a></li>
@@ -629,7 +635,7 @@
 						<li><a href="/about">桐朋祭について</a></li>
 						<li><a href="/visitor">来場者の皆様へ</a></li>
 						<li><a href="/access">本校へのアクセス</a></li>
-						<li><a href="/timetable">タイムテーブル</a></li>
+						<li><a href="/timetable">企画タイムテーブル</a></li>
 						<li><a href="/qa">よくある質問</a></li>
 						<li><a href="/news">お知らせ</a></li>
 						<li><a href="/site/info">サイト情報</a></li>
