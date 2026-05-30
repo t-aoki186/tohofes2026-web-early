@@ -1,12 +1,24 @@
 <script lang="ts">
-	export let data;
+	const { data } = $props();
+
 	const item = data.item;
 
 	import { onMount } from 'svelte';
 	import { reveal } from '$lib/reveal';
 	import { mdToHtml } from '$lib/utils/markdown';
 
-	// Swiper関連のインポートを追加
+	/*s:モーダル*/
+	import Modal from '$lib/components/Modal.svelte';
+	let showModal = $state(false);
+	let modalType = $state('');
+
+	function openModal(type) {
+		showModal = true;
+		modalType = type;
+	}
+	/*e:モーダル*/
+
+	/*s: カルーセル*/
 	import Swiper from 'swiper';
 	import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
@@ -16,7 +28,6 @@
 	import { setupViewTransition } from 'sveltekit-view-transition';
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 
-	/*s:カルーセル*/
 	let swiperContainer: HTMLDivElement | null = null;
 	let swiperInstance: any = null;
 
@@ -45,7 +56,7 @@
 				pagination: { el: '.swiper-pagination', clickable: true },
 				autoplay: { delay: 3000, disableOnInteraction: false },
 				spaceBetween: 20,
-				slidesPerView: 1, // ← 修正: slidersPreview → slidesPerView
+				slidesPerView: 1,
 				loop: true
 			});
 		}
@@ -58,6 +69,34 @@
 		};
 	});
 	/*e:カルーセル*/
+
+	/*s: 共有機能*/
+	function getShareDescription() {
+		if (typeof document === 'undefined') {
+			return '';
+		}
+		const descriptionMeta = document.querySelector("meta[name='description']");
+		return descriptionMeta ? descriptionMeta.getAttribute('content') || '' : '';
+	}
+
+	async function handleShare() {
+		if (typeof navigator === 'undefined' || !navigator.share) {
+			console.warn('Web Share API is not supported in this browser.');
+			return;
+		}
+
+		try {
+			await navigator.share({
+				title: document.title,
+				text: getShareDescription(),
+				url: window.location.href
+			});
+			console.log('共有に成功しました');
+		} catch (error) {
+			console.error('共有に失敗しました', error);
+		}
+	}
+	/*e: 共有機能*/
 </script>
 
 <!-- 以下、HTML部分はそのままでも動作しますが、念のため全体を記載 -->
@@ -65,6 +104,15 @@
 	<title>{item.title} | {data.site_title}</title>
 	<meta property="og:title" content="{item.title} | {data.site_title}" />
 </svelte:head>
+
+<Modal bind:showModal>
+	{#if modalType === 'shareBtn'}
+		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
+			<i class="fa-solid fa-arrow-up-from-bracket"></i>共有
+		</p>
+		<hr class="main-hr" />
+	{/if}
+</Modal>
 
 <main class="mt-15 mr-1 ml-1 min-h-screen">
 	<div class="container m-auto mt-25 border-b-2 border-b-(--main-text-color)">
@@ -108,15 +156,29 @@
 				</div>
 			</div>
 			<div class="orgp-top-grid-item">
-				<p class="text-2xl text-(--main-text-color) mb-4">
+				<a
+					href="/organizations/?category={item.category}"
+					class="mb-4 inline-block text-2xl text-(--main-text-color)"
+				>
 					<i class="fa-solid fa-tag mr-1"></i>{item.category}
-				</p>
-				<p class="text-2xl text-(--main-text-color)" title="場所については紙のパンフレットをご覧ください。">
+				</a>
+				<p
+					class="text-2xl text-(--main-text-color)"
+					title="場所については紙のパンフレットをご覧ください。"
+				>
 					<i class="fa-solid fa-location-dot mr-1"></i>{item.location}
 				</p>
+				<hr class="main-hr" />
+				<button type="button" id="pageShareButton" onclick={handleShare} class="mx-auto my-4 flex cursor-pointer flex-col">
+					<div class="text-center text-(--main-text-color)">
+						<i class="fa-solid fa-arrow-up-from-bracket text-4xl"></i>
+						<p class="text-xl">共有</p>
+					</div>
+				</button>
+				<hr class="main-hr" />
 			</div>
 		</div>
-		<div class="prose mt-4 min-w-full">{@html mdToHtml(item.body)}</div>
+		<div class="prose mt-8 min-w-full text-xl">{@html mdToHtml(item.body)}</div>
 	</section>
 </main>
 <ol class="main-breadcrumb container mx-auto">
