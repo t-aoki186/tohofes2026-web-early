@@ -463,6 +463,55 @@
 	</div>
 	<!--e:来場者の皆様へ-->
 	<!---->
+	<!--s:企画情報-->
+	<div class="container m-auto mt-10 rounded-xl bg-(--title-bg-color)" data-aos="fade-up">
+		<p use:reveal class="tf26-page-title">
+			{#each '企画情報'.split('') as char, i}
+				<span class="char" style={`--d: ${i * 0.12}s`}>{char}</span>
+			{/each}
+		</p>
+	</div>
+	<div class="container mx-auto mt-4 mb-12" data-aos="fade-up">
+		<form class="s-search-form mb-4" action="/organizations/" method="GET">
+			<input
+				class="s-search-input"
+				type="text"
+				id="searchTerm"
+				name="search"
+				placeholder="検索..."
+			/>
+			<button class="m-search-button" type="submit" title="検索する"
+				><i class="fas fa-search"></i></button
+			>
+		</form>
+		<div class="relative m-auto mt-10 mb-4 max-w-125 bg-white">
+			<!-- 左下の角 -->
+			<span
+				class="absolute bottom-0 left-0 h-4 w-4 border-b-2 border-l-2 border-(--main-text-color)"
+			></span>
+			<!-- 右下の角 -->
+			<span
+				class="absolute right-0 bottom-0 h-4 w-4 border-r-2 border-b-2 border-(--main-text-color)"
+			></span>
+			<!-- コンテンツ -->
+			<div class="flex justify-center gap-4 font-bold text-(--main-text-color)">
+				<div class="tp-search-method">
+					<a href="/organizations" class="dash-link">
+						<i class="fa-solid fa-list"></i>
+						<p>絞り込む</p>
+					</a>
+				</div>
+				<div class="tp-search-method">
+					<a href="/timetable" class="dash-link">
+						<i class="fa-solid fa-list"></i>
+						<p>タイムテーブルから<br />探す</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--e: 企画情報-->
+	<!---->
 	<!--s:アクセス-->
 	<div class="container m-auto mt-10 rounded-xl bg-(--title-bg-color)" data-aos="fade-up">
 		<p use:reveal class="tf26-page-title">

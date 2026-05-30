@@ -4,10 +4,16 @@ export async function load({ url }) {
   const categoryParam = url.searchParams.get("category");
   const search = url.searchParams.get("search");
 
-  //全データを取得
-  const allData = await fetchOrganizations();
+  //除外カテゴリ
+  const excludeCategories = ["stage", "student-lessons"];
 
-  let results = allData;
+  //全データを取得し、指定されたカテゴリを除外
+  const allData = await fetchOrganizations();
+  const filteredData = allData.filter((item: any) => 
+    !excludeCategories.includes(item.category)
+  );
+
+  let results = filteredData;
 
   //category/typeでの検索
   if (categoryParam) {

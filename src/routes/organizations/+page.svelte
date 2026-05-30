@@ -11,7 +11,7 @@
 
 	let pageTitle = '参加団体';
 
-	// --- 絞り込み検索用
+	/*s: 絞り込み検索*/
 	type QueryKey = 'category' | 'place' | 'date';
 
 	function getChangedUrl(key: QueryKey, value: string | number): string {
@@ -36,6 +36,7 @@
 	const close = () => {
 		show = false;
 	};
+	/*e: 絞り込み検索*/
 </script>
 
 <svelte:head>
