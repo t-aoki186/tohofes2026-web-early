@@ -1,4 +1,4 @@
-<script lang="ts"> 
+<script lang="ts">
 	export let data;
 	const item = data.item;
 
@@ -25,7 +25,7 @@
 		{
 			id: 1,
 			title: '外部公開用鯖',
-			image: item.thumbnail ||'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'
+			image: item.thumbnail || 'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'
 		},
 		{
 			id: 2,
@@ -33,7 +33,7 @@
 			image: 'https://pic.atserver186.jp/img/atserver/root/carousel/server_2.webp'
 		}
 	];
-	
+
 	onMount(() => {
 		if (swiperContainer) {
 			swiperInstance = new Swiper(swiperContainer, {
@@ -45,11 +45,11 @@
 				pagination: { el: '.swiper-pagination', clickable: true },
 				autoplay: { delay: 3000, disableOnInteraction: false },
 				spaceBetween: 20,
-				slidesPerView: 1,  // ← 修正: slidersPreview → slidesPerView
+				slidesPerView: 1, // ← 修正: slidersPreview → slidesPerView
 				loop: true
 			});
 		}
-		
+
 		// クリーンアップ関数
 		return () => {
 			if (swiperInstance) {
@@ -80,14 +80,21 @@
 							<div class="swiper-wrapper">
 								{#each slides as s}
 									<div class="swiper-slide">
-										<div class="slide-card overflow-hidden rounded-lg bg-white shadow-md">
-											{#if s.image}
-												<img
-													src={s.image}
-													alt={s.title}
-													class="slide-img h-full w-full object-cover"
-												/>
-											{/if}
+										<div class="slide-container">
+											<div class="slide-card overflow-hidden rounded-lg bg-white shadow-md">
+												{#if s.image}
+													<!-- 背景のぼかし画像 -->
+													<div
+														class="slide-blur-bg"
+														style="background-image: url({s.image});"
+													></div>
+
+													<!-- メイン画像（アスペクト比を維持） -->
+													<div class="slide-img-wrapper">
+														<img src={s.image} alt={s.title} class="slide-img" loading="lazy" />
+													</div>
+												{/if}
+											</div>
 										</div>
 									</div>
 								{/each}
@@ -101,11 +108,11 @@
 				</div>
 			</div>
 			<div class="orgp-top-grid-item">
-				<p class="text-lg text-(--main-text-color)">
-					<i class="fa-solid fa-tag"></i>{item.category}
+				<p class="text-2xl text-(--main-text-color) mb-4">
+					<i class="fa-solid fa-tag mr-1"></i>{item.category}
 				</p>
-				<p class="text-lg text-(--main-text-color)">
-					<i class="fa-solid fa-location-dot mr-1 text-xs"></i>{item.location}
+				<p class="text-2xl text-(--main-text-color)" title="場所については紙のパンフレットをご覧ください。">
+					<i class="fa-solid fa-location-dot mr-1"></i>{item.location}
 				</p>
 			</div>
 		</div>
@@ -119,79 +126,127 @@
 </ol>
 
 <style>
-@view-transition {
-	navigation: auto;
-}
+	.slide-container {
+		position: relative;
+		width: 100%;
+		padding-bottom: 56.25%; /* 16:9 = 9/16 = 0.5625 */
+		background: #1a1a1a;
+		overflow: hidden;
+		border-radius: 12px;
+	}
 
-:global(.ats-swiper) {
-	--swiper-navication-color: var(--main-text-color);
-	--swiper-pagination-color: var(--main-text-color);
-}
+	/* 背景のぼかし画像 */
+	.slide-blur-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		filter: blur(20px) brightness(0.7);
+		transform: scale(1.1); /* ぼかしのエッジを隠す */
+		z-index: 1;
+	}
 
-:global(.ats-swiper .swiper-button-next),
-:global(.ats-swiper .swiper-button-prev) {
-	color: var(--sub-text-color);
-}
+	/* メイン画像のラッパー */
+	.slide-img-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+	}
 
-/* Swiper navigation & pagination responsive size */
-:global(.ats-swiper .swiper-button-next),
-:global(.ats-swiper .swiper-button-prev) {
-	font-size: 2.2rem;
-	width: 44px;
-	height: 44px;
-}
-:global(.ats-swiper .swiper-pagination-bullet) {
-	width: 12px;
-	height: 12px;
-}
+	/* メイン画像 */
+	.slide-img {
+		max-width: 100%;
+		max-height: 100%;
+		width: auto;
+		height: auto;
+		object-fit: contain; /* 画像のアスペクト比を維持 */
+		border-radius: 8px;
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+	}
 
-@media (max-width: 1024px) {
+	@view-transition {
+		navigation: auto;
+	}
+
+	:global(.ats-swiper) {
+		--swiper-navication-color: var(--main-text-color);
+		--swiper-pagination-color: var(--main-text-color);
+	}
+
 	:global(.ats-swiper .swiper-button-next),
 	:global(.ats-swiper .swiper-button-prev) {
-		font-size: 1.5rem;
-		width: 32px;
-		height: 32px;
+		color: var(--sub-text-color);
 	}
-	:global(.ats-swiper .swiper-pagination-bullet) {
-		width: 9px;
-		height: 9px;
-	}
-}
 
-@media (max-width: 600px) {
+	/* Swiper navigation & pagination responsive size */
 	:global(.ats-swiper .swiper-button-next),
 	:global(.ats-swiper .swiper-button-prev) {
-		font-size: 1.1rem;
-		width: 24px;
-		height: 24px;
+		font-size: 2.2rem;
+		width: 44px;
+		height: 44px;
 	}
 	:global(.ats-swiper .swiper-pagination-bullet) {
-		width: 7px;
-		height: 7px;
+		width: 12px;
+		height: 12px;
 	}
-}
 
-.carousel-wrapper {
-	width: 60vw;
-	margin: 0 auto;
-}
+	@media (max-width: 1024px) {
+		:global(.ats-swiper .swiper-button-next),
+		:global(.ats-swiper .swiper-button-prev) {
+			font-size: 1.5rem;
+			width: 32px;
+			height: 32px;
+		}
+		:global(.ats-swiper .swiper-pagination-bullet) {
+			width: 9px;
+			height: 9px;
+		}
+	}
 
-.slide-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-}
+	@media (max-width: 600px) {
+		:global(.ats-swiper .swiper-button-next),
+		:global(.ats-swiper .swiper-button-prev) {
+			font-size: 1.1rem;
+			width: 24px;
+			height: 24px;
+		}
+		:global(.ats-swiper .swiper-pagination-bullet) {
+			width: 7px;
+			height: 7px;
+		}
+	}
 
-@media (max-width: 1024px) {
 	.carousel-wrapper {
-		width: 90vw;
+		width: 60vw;
+		margin: 0 auto;
 	}
-}
 
-.orgp-top-content {
-	display: grid;
-	grid-template-columns: 4fr 3fr; /* 左:右 = 4:3 */
-	gap: 2rem; /* アイテム間に余白を追加する場合 */
-}
+	.slide-card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	@media (max-width: 1024px) {
+		.carousel-wrapper {
+			width: 90vw;
+		}
+	}
+
+	.orgp-top-content {
+		display: grid;
+		grid-template-columns: 4fr 3fr; /* 左:右 = 4:3 */
+		gap: 2rem; /* アイテム間に余白を追加する場合 */
+	}
 </style>
