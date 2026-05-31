@@ -3,6 +3,14 @@
 
 	const item = data.item;
 
+	// 複数カテゴリがカンマ区切りで与えられた場合、先頭のカテゴリのみを主カテゴリとして扱う
+	function getPrimaryCategory(category: string | null | undefined): string {
+		if (!category || typeof category !== 'string') return '';
+		return category.split(',')[0].trim();
+	}
+
+	const primaryCategory = getPrimaryCategory(item.category);
+
 	import { onMount } from 'svelte';
 	import { reveal } from '$lib/reveal';
 	import { mdToHtml } from '$lib/utils/markdown';
@@ -17,6 +25,9 @@
 		modalType = type;
 	}
 	/*e:モーダル*/
+
+	/*カテゴリ変換マップ*/
+	import { getCategoryLabel, getCategoryInfo } from '$lib/utils/orgCategoryMap.js';
 
 	/*s: カルーセル*/
 	import Swiper from 'swiper';
@@ -162,10 +173,10 @@
 			</div>
 			<div class="orgp-top-grid-item">
 				<a
-					href="/organizations/?category={item.category}"
+					href="/organizations/?category={primaryCategory}"
 					class="mb-4 inline-block text-2xl text-(--main-text-color)"
 				>
-					<i class="fa-solid fa-tag mr-1"></i>{item.category}
+					<i class="fa-solid fa-tag mr-1"></i>{getCategoryLabel(primaryCategory)}
 				</a>
 				<p
 					class="text-2xl text-(--main-text-color)"

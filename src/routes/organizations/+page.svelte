@@ -11,6 +11,8 @@
 
 	let pageTitle = '参加団体';
 
+	import { getCategoryLabel, getCategoryInfo } from '$lib/utils/orgCategoryMap.js';
+
 	/*s: 絞り込み検索*/
 	type QueryKey = 'category' | 'place' | 'date';
 
@@ -187,10 +189,9 @@
 					<div class="flex">
 						<div class="mr-2 flex-col" style="min-width: 0; max-width: 100%;">
 							<p
-								class="sp-search-result-text text-xs"
-								style="color: color-mix(in srgb, var(--main-text-color), transparent 50%);"
+								class="sp-search-result-text text-xs text-(--main-text-color)"
 							>
-								{item.category || 'ニュース'}
+								<i class="fa-solid fa-tag mr-1"></i>{getCategoryLabel(item.category)}
 							</p>
 							<p class="sp-search-result-heading h-1/2 text-sm text-gray-600">
 								{item.heading}
