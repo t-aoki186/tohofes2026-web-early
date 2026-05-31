@@ -1,7 +1,7 @@
 <script lang="ts">
 	const { data } = $props();
 
-	const item = data.item;
+	const item = $derived(data.item);
 
 	// 複数カテゴリがカンマ区切りで与えられた場合、先頭のカテゴリのみを主カテゴリとして扱う
 	function getPrimaryCategory(category: string | null | undefined): string {
@@ -9,22 +9,12 @@
 		return category.split(',')[0].trim();
 	}
 
-	const primaryCategory = getPrimaryCategory(item.category);
+	// 修正点2: primaryCategory も $derived にする（item に依存するため）
+	const primaryCategory = $derived(getPrimaryCategory(item.category));
 
 	import { onMount } from 'svelte';
 	import { reveal } from '$lib/reveal';
 	import { mdToHtml } from '$lib/utils/markdown';
-
-	/*s:モーダル*/
-	import Modal from '$lib/components/Modal.svelte';
-	let showModal = $state(false);
-	let modalType = $state('');
-
-	function openModal(type) {
-		showModal = true;
-		modalType = type;
-	}
-	/*e:モーダル*/
 
 	/*カテゴリ変換マップ*/
 	import { getCategoryLabel, getCategoryInfo } from '$lib/utils/orgCategoryMap.js';
@@ -44,25 +34,19 @@
 
 	function getImageArray(): string[] {
 		if (!item.top_img) {
-			//top_imgがない場合はサムネイルまたはnoimg
 			return [
 				item.thumbnail || 'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'
 			];
 		}
-
-		//カンマ区切りの文字列を配列に変換
 		const images = item.top_img.split(',').map((img: string) => img.trim());
-
-		//空の要素を除外
 		return images.filter((img: string) => img.length > 0);
 	}
 
-	//動的にスライドを生成
-	const slides = getImageArray().map((imageUrl: string, index: number) => ({
+	const slides = $derived(getImageArray().map((imageUrl: string, index: number) => ({
 		id: index + 1,
-		title: index === 0 ? item.title : `${item.title} - ${index + 1}`, // 1枚目はタイトル、それ以降はタイトル+番号
+		title: index === 0 ? item.title : `${item.title} - ${index + 1}`,
 		image: imageUrl
-	}));
+	})));
 
 	onMount(() => {
 		if (swiperContainer) {
@@ -122,15 +106,6 @@
 	<title>{item.title} | {data.site_title}</title>
 	<meta property="og:title" content="{item.title} | {data.site_title}" />
 </svelte:head>
-
-<Modal bind:showModal>
-	{#if modalType === 'shareBtn'}
-		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
-			<i class="fa-solid fa-arrow-up-from-bracket"></i>共有
-		</p>
-		<hr class="main-hr" />
-	{/if}
-</Modal>
 
 <main class="mt-15 mr-1 ml-1 min-h-screen">
 	<div class="container m-auto mt-25 border-b-2 border-b-(--main-text-color)">
