@@ -625,7 +625,7 @@
 			</div>
 		</div>
 		<br />
-		<a href="/theme" class="link-main">
+		<a href="/about/#theme" class="link-main">
 			<div class="link-main-underline">
 				<i class="fa-solid fa-arrow-right-long"></i>
 				<span>詳しくはこちら</span>
