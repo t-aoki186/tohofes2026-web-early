@@ -1,0 +1,34 @@
+<script lang="ts">
+	import type { PageData } from './$types';
+	import Timetable from '$lib/components/Timetable.svelte';
+
+	let { data }: { data: PageData } = $props();
+
+	let pageTitle = 'タイムテーブル';
+</script>
+
+<svelte:head>
+	<title>{pageTitle} | {data.site_title}</title>
+	<meta property="og:title" content="{pageTitle} | {data.site_title}" />
+</svelte:head>
+
+<main class="mt-15 mr-1 ml-1 min-h-screen">
+	<div class="container m-auto mt-25 border-b-2 border-b-(--main-text-color)">
+		<p class="tf26-page-title" style="color: black; margin-bottom: 0;">{pageTitle}</p>
+	</div>
+	<section class="container mx-auto mt-15 mb-25">
+		<div class="scroll-container">
+			<div class="slide-item">
+				<Timetable events={data.events} />
+			</div>
+		</div>
+	</section>
+</main>
+<ol class="main-breadcrumb container mx-auto">
+	<li><a href="/">ホーム</a></li>
+	<li>{pageTitle}</li>
+</ol>
+
+<style>
+
+</style>

@@ -5,16 +5,6 @@
 	import { reveal } from '$lib/reveal';
 	import Modal from '$lib/components/Modal.svelte';
 
-	/*s:モーダル*/
-	let showModal = $state(false);
-	let modalType = $state('');
-
-	function openModal(type) {
-		showModal = true;
-		modalType = type;
-	}
-	/*e:モーダル*/
-
 	let pageTitle = '来場者の皆様へ';
 </script>
 
@@ -22,16 +12,6 @@
 	<title>{pageTitle} | {data.site_title}</title>
 	<meta property="og:title" content="{pageTitle} | {data.site_title}" />
 </svelte:head>
-
-<Modal bind:showModal>
-	{#if modalType === 'visitorp-floor-map'}
-		<p class="mb-4 text-center text-2xl font-bold text-(--main-text-color)">
-			<i class="fa-solid fa-map"></i>フロアマップ
-		</p>
-		<hr class="main-hr" />
-		<!--e: 飲食の決済方法について-->
-	{/if}
-</Modal>
 
 <main class="mt-15 mr-1 ml-1 min-h-screen">
 	<div class="container m-auto mt-25 border-b-2 border-b-(--main-text-color)">
