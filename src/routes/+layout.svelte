@@ -392,10 +392,10 @@
 						>参加団体</a
 					>
 				</li>
-				<li>
-					<p class="ml-3 cursor-no-drop text-xs tracking-wider text-gray-500 transition">
-						飲食団体
-					</p>
+			<li>
+					<a href="/foods" class="header-text ml-3 text-xs tracking-wider transition"
+						>飲食情報</a
+					>
 				</li>
 				<li>
 					<a href="/timetable" class="header-text ml-3 text-xs tracking-wider transition"
@@ -420,7 +420,7 @@
 				<li><a href="/about" class="header-text">桐朋祭とは</a></li>
 				<li><a href="/visitor" class="header-text">来場者の皆様へ</a></li>
 				<li><a href="/organizations" class="header-text">参加団体</a></li>
-				<li><p class="cursor-no-drop text-gray-500">飲食団体</p></li>
+				<li><a href="foods" class="header-text">飲食情報</a></li>
 				<li><a href="/timetable" class="header-text">企画タイムテーブル</a></li>
 				<li>
 					<button class="header-text" onclick={() => (otherOpen = !otherOpen)}>その他</button>

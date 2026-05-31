@@ -179,7 +179,7 @@
 		}
 		.payment-method-img {
 			width: 80%;
-			@apply mx-auto;
+			margin-inline: auto; 
 		}
 	}
 
