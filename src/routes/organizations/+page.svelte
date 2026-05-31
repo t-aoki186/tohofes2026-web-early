@@ -183,11 +183,11 @@
 				</a>
 				<p class="text-lg text-(--main-text-color)">ブログ</p>
 				<a
-					href={getChangedUrl('category', 'organization-blogs')}
+					href={getChangedUrl('category', 'article')}
 					class="sp-refined-date-s"
-					class:active={isActive('category', 'organization-blogs')}
+					class:active={isActive('category', 'article')}
 				>
-					<p class="text-sm text-(--main-text-color)">参加団体ブログ</p>
+					<p class="text-sm text-(--main-text-color)">参加団体特設記事</p>
 				</a>
 			</div>
 			<!--
@@ -272,7 +272,7 @@
 								<img
 									src={item.thumbnail ||
 										'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'}
-									alt="サンプル00"
+									alt="{item.title}サムネイル"
 									class="ml-auto rounded-lg"
 								/>
 							</div>
