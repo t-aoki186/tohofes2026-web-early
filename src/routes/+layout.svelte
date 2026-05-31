@@ -392,10 +392,10 @@
 						>参加団体</a
 					>
 				</li>
-					<li>
-					<a href="/foods" class="header-text ml-3 text-xs tracking-wider transition"
-						>飲食団体</a
-					>
+				<li>
+					<p class="ml-3 cursor-no-drop text-xs tracking-wider text-gray-500 transition">
+						飲食団体
+					</p>
 				</li>
 				<li>
 					<p class="ml-3 cursor-no-drop text-xs tracking-wider text-gray-500 transition">
@@ -420,7 +420,7 @@
 				<li><a href="/about" class="header-text">桐朋祭とは</a></li>
 				<li><a href="/visitor" class="header-text">来場者の皆様へ</a></li>
 				<li><a href="/organizations" class="header-text">参加団体</a></li>
-				<li><a href="/foods" class="header-text">飲食団体</a></li>
+				<li><p class="cursor-no-drop text-gray-500">飲食団体</p></li>
 				<li><p class="cursor-no-drop text-gray-500">企画タイムテーブル</p></li>
 				<li>
 					<button class="header-text" onclick={() => (otherOpen = !otherOpen)}>その他</button>
@@ -451,11 +451,6 @@
 				<li>
 					<a href="/site/sitemap" class="header-text"
 						><i class="fa-solid fa-sitemap mr-1 text-xs"></i>サイトマップ</a
-					>
-				</li>
-				<li>
-					<a href="/qa" class="header-text"
-						><i class="fa-solid fa-circle-question mr-1 text-xs"></i>よくある質問</a
 					>
 				</li>
 				<li>
@@ -541,7 +536,6 @@
 						<li><a href="/visitor">来場者の皆様へ</a></li>
 						<li><a href="/access">本校へのアクセス</a></li>
 						<li><a href="/timetable">企画タイムテーブル</a></li>
-						<li><a href="/qa">よくある質問</a></li>
 						<li><a href="/news">お知らせ</a></li>
 						<li><a href="/site/info">サイト情報</a></li>
 						<li><a href="/site/sitemap">サイトマップ</a></li>
@@ -636,7 +630,6 @@
 						<li><a href="/visitor">来場者の皆様へ</a></li>
 						<li><a href="/access">本校へのアクセス</a></li>
 						<li><a href="/timetable">企画タイムテーブル</a></li>
-						<li><a href="/qa">よくある質問</a></li>
 						<li><a href="/news">お知らせ</a></li>
 						<li><a href="/site/info">サイト情報</a></li>
 						<li><a href="/site/sitemap">サイトマップ</a></li>

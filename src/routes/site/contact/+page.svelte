@@ -19,7 +19,7 @@
 	</div>
 	<section class="container mx-auto mt-15 mb-25 flex flex-col">
 		<p>お問い合わせフォームは準備中です。<br />以下のメールアドレスにお問い合わせください。</p>
-		<p>84th.tccaoki[at]gmial.com</p>
+		<p>toho2026program[at]gmail.com</p>
 		<p>[at]は@に置き換えてください。</p>
 		<!--
 		<div class="mx-auto w-full rounded-2xl bg-gray-50 p-10 md:w-[70%] lg:w-[50%]">
