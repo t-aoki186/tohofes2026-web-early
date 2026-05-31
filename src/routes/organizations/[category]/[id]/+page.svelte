@@ -31,20 +31,26 @@
 	let swiperContainer: HTMLDivElement | null = null;
 	let swiperInstance: any = null;
 
-	//カルーセルの内容
-	const slides = [
-		{
-			id: 1,
-			title: '外部公開用鯖',
-			image: item.thumbnail || 'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'
-		},
-		{
-			id: 2,
-			title: '個人用鯖',
-			image: 'https://pic.atserver186.jp/img/atserver/root/carousel/server_2.webp'
+	function getImageArray(): string[] {
+		if (!item.top_img) {
+			//top_imgがない場合はサムネイルまたはnoimg
+			return [item.thumbnail || 'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'];
 		}
-	];
+		
+		//カンマ区切りの文字列を配列に変換
+		const images = item.top_img.split(',').map((img: string) => img.trim());
+		
+		//空の要素を除外
+		return images.filter((img: string) => img.length > 0);
+	}
 
+	//動的にスライドを生成
+	const slides = getImageArray().map((imageUrl: string, index: number) => ({
+		id: index + 1,
+		title: index === 0 ? item.title : `${item.title} - ${index + 1}`, // 1枚目はタイトル、それ以降はタイトル+番号
+		image: imageUrl
+	}));
+	
 	onMount(() => {
 		if (swiperContainer) {
 			swiperInstance = new Swiper(swiperContainer, {
@@ -57,11 +63,10 @@
 				autoplay: { delay: 3000, disableOnInteraction: false },
 				spaceBetween: 20,
 				slidesPerView: 1,
-				loop: true
+				loop: slides.length > 1 // 画像が1枚の場合はループしない
 			});
 		}
-
-		// クリーンアップ関数
+		
 		return () => {
 			if (swiperInstance) {
 				swiperInstance.destroy(true, true);
