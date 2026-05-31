@@ -118,9 +118,9 @@
 					<p class="text-sm text-(--main-text-color)">アクティビティ</p>
 				</a>
 				<a
-					href={getChangedUrl('category', 'バンド')}
+					href={getChangedUrl('category', 'bands')}
 					class="sp-refined-date-s"
-					class:active={isActive('category', 'バンド')}
+					class:active={isActive('category', 'bands')}
 				>
 					<p class="text-sm text-(--main-text-color)">バンド</p>
 				</a>
@@ -265,12 +265,18 @@
 								{item.body}
 							</p>
 						</div>
-						<img
-							src={item.thumbnail ||
-								'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'}
-							alt="サンプル00"
-							class="ml-auto w-1/2 rounded-lg"
-						/>
+						<div class="mr-0 items-end">
+							<div
+								style="width: 120px; height: 120px; position: relative; background-color: #f0f0f0; border-radius: 8px; overflow: hidden;"
+							>
+								<img
+									src={item.thumbnail ||
+										'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'}
+									alt="サンプル00"
+									class="ml-auto rounded-lg"
+								/>
+							</div>
+						</div>
 					</div>
 				</article>
 			{/each}

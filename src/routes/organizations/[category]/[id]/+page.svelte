@@ -45,12 +45,14 @@
 	function getImageArray(): string[] {
 		if (!item.top_img) {
 			//top_imgがない場合はサムネイルまたはnoimg
-			return [item.thumbnail || 'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'];
+			return [
+				item.thumbnail || 'https://pic.atserver186.jp/img/tohofes/thumbnail/webp/no-image.webp'
+			];
 		}
-		
+
 		//カンマ区切りの文字列を配列に変換
 		const images = item.top_img.split(',').map((img: string) => img.trim());
-		
+
 		//空の要素を除外
 		return images.filter((img: string) => img.length > 0);
 	}
@@ -61,7 +63,7 @@
 		title: index === 0 ? item.title : `${item.title} - ${index + 1}`, // 1枚目はタイトル、それ以降はタイトル+番号
 		image: imageUrl
 	}));
-	
+
 	onMount(() => {
 		if (swiperContainer) {
 			swiperInstance = new Swiper(swiperContainer, {
@@ -77,7 +79,7 @@
 				loop: slides.length > 1 // 画像が1枚の場合はループしない
 			});
 		}
-		
+
 		return () => {
 			if (swiperInstance) {
 				swiperInstance.destroy(true, true);
@@ -185,7 +187,12 @@
 					<i class="fa-solid fa-location-dot mr-1"></i>{item.location}
 				</p>
 				<hr class="main-hr" />
-				<button type="button" id="pageShareButton" onclick={handleShare} class="mx-auto my-4 flex cursor-pointer flex-col">
+				<button
+					type="button"
+					id="pageShareButton"
+					onclick={handleShare}
+					class="mx-auto my-4 flex cursor-pointer flex-col"
+				>
 					<div class="text-center text-(--main-text-color)">
 						<i class="fa-solid fa-arrow-up-from-bracket text-4xl"></i>
 						<p class="text-xl">共有</p>
@@ -194,7 +201,11 @@
 				<hr class="main-hr" />
 			</div>
 		</div>
-		<div class="prose mt-8 min-w-full text-xl">{@html mdToHtml(item.body)}</div>
+		{#if item.body && item.body.trim() !== ''}
+			<div class="prose mt-8 min-w-full text-xl">
+				{@html mdToHtml(item.body)}
+			</div>
+		{/if}
 	</section>
 </main>
 <ol class="main-breadcrumb container mx-auto">
