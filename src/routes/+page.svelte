@@ -265,8 +265,9 @@
 		<p class="mb-4 text-center text-xl font-bold md:text-2xl">
 			<i class="fa-solid fa-triangle-exclamation"></i>飲食の決済方法について
 		</p>
-		<p class="mb-2 text-center text-bace md:text-lg">
-			今年度から、生徒による飲食団体は&nbsp;<strong class="underline text-lg md:text-xl">交通系ICカード決済限定</strong
+		<p class="text-bace mb-2 text-center md:text-lg">
+			今年度から、生徒による飲食団体は&nbsp;<strong class="text-lg underline md:text-xl"
+				>交通系ICカード決済限定</strong
 			>&nbsp;です。
 			<br />
 			駅などであらかじめチャージの上、お越しください。
@@ -293,7 +294,7 @@
 				{#if data.latest && data.latest.length > 0}
 					{#each data.latest as item}
 						<ul>
-							<li class="mx-auto mb-4 w-full list-none" style="view-transition-name: newsp-hero;">
+							<li class="mx-auto mb-4 w-full list-none">
 								<a href="/news/{item.id}">
 									<div
 										class="news-list flex border-l-2 pl-4"
@@ -318,7 +319,7 @@
 									</div>
 								</a>
 							</li>
-						</ul>
+						</ul>	
 					{/each}
 				{:else}
 					<p>お知らせの取得に失敗しました</p>
@@ -532,9 +533,9 @@
 				<hr class="main-hr" />
 				<div class="map-text">
 					<p class="my-auto text-xl text-(--main-text-color)">
-						<i class="fa-solid fa-train mr-1 text-xs"></i>JR中央線国立駅より徒歩20分<br /><i
+						<i class="fa-solid fa-train mr-1 text-xs"></i>JR中央線&nbsp;国立駅より徒歩15分<br /><i
 							class="fa-solid fa-train mr-1 text-xs"
-						></i>JR南武線谷保駅より徒歩15分
+						></i>JR南武線&nbsp;谷保駅より徒歩15分
 					</p>
 				</div>
 			</div>

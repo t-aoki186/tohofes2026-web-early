@@ -392,21 +392,39 @@
 						>参加団体</a
 					>
 				</li>
-			<li>
-					<a href="/foods" class="header-text ml-3 text-xs tracking-wider transition"
-						>飲食情報</a
-					>
+				<li>
+					<a href="/foods" class="header-text ml-3 text-xs tracking-wider transition">飲食情報</a>
 				</li>
 				<li>
 					<a href="/timetable" class="header-text ml-3 text-xs tracking-wider transition"
 						>企画タイムテーブル</a
 					>
 				</li>
-				<li class="mr-6">
+				<li>
 					<button
 						class="header-text ml-3 cursor-pointer text-xs tracking-wider transition"
 						onclick={() => (otherOpen = !otherOpen)}>その他</button
 					>
+				</li>
+				<li>
+					<a
+						href="https://www.instagram.com/tohofes_2026/"
+						class="header-text ml-3 text-xs tracking-wider transition"
+						title="Instagram"
+						target="_blank"
+					>
+						<i class="fa-brands fa-instagram"></i>
+					</a>
+				</li>
+				<li class="mr-6">
+					<a
+						href="https://x.com/tohofes_2026"
+						class="header-text ml-3 text-xs tracking-wider transition"
+						title="Instagram"
+						target="_blank"
+					>
+						<i class="fa-brands fa-x-twitter"></i>
+					</a>
 				</li>
 			</ul>
 		</nav>
@@ -426,6 +444,19 @@
 					<button class="header-text" onclick={() => (otherOpen = !otherOpen)}>その他</button>
 				</li>
 			</ul>
+			<hr class="main-hr" />
+			<div class="flex gap-2 text-center" style="">
+				<a
+					href="https://www.instagram.com/tohofes_2026/"
+					class="text-bace header-text" target="_blank"
+					title="第75回桐朋祭実行委員会公式Instagram"><i class="fa-brands fa-instagram"></i></a
+				>
+				<a
+					href="https://x.com/tohofes_2026"
+					class="text-bace header-text" target="_blank"
+					title="第75回桐朋祭実行委員会公式X(旧Twitter)"><i class="fa-brands fa-x-twitter"></i></a
+				>
+			</div>
 		</nav>
 	{/if}
 
@@ -567,21 +598,15 @@
 					<h4>各種SNS / リンク</h4>
 					<ul>
 						<li>
-							<a href="https://x.com" target="_blank">
+							<a href="https://x.com/tohofes_2026" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://www.instagram.com" target="_blank">
+							<a href="https://www.instagram.com/tohofes_2026/" target="_blank">
 								<i class="fa-brands fa-instagram mr-1 text-xs"></i>
 								<span>Instagram</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://atserver186.jp" target="_blank">
-								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
-								<span>ATSocial</span>
 							</a>
 						</li>
 						<li>
@@ -661,21 +686,15 @@
 					<summary class="font-bold">各種SNS / リンク</summary>
 					<ul class="pt-2 pl-2">
 						<li>
-							<a href="https://x.com" target="_blank">
+							<a href="https://x.com/tohofes_2026" target="_blank">
 								<i class="fa-brands fa-x-twitter mr-1 text-xs"></i>
 								<span>X(Twitter)</span>
 							</a>
 						</li>
 						<li>
-							<a href="https://www.instagram.com" target="_blank">
+							<a href="https://www.instagram.com/tohofes_2026/" target="_blank">
 								<i class="fa-brands fa-instagram mr-1 text-xs"></i>
 								<span>Instagram</span>
-							</a>
-						</li>
-						<li>
-							<a href="https://atserver186.jp" target="_blank">
-								<i class="fa-solid fa-arrow-up-right-from-square mr-1 text-xs"></i>
-								<span>ATSocial</span>
 							</a>
 						</li>
 						<li>

@@ -94,14 +94,6 @@
 			<br />
 			<hr class="main-hr" />
 			<br />
-			<h1 class="tf26-section-title mt-4" id="theme">テーマについて</h1>
-			<br />
-			<img
-				src="https://pic.atserver186.jp/img/tohofes/about/logo-main-v2.webp"
-				alt="第75回桐朋祭ロゴ"
-				class="m-auto mb-4 ml-auto h-auto w-[20%]"
-				style="view-transition-name: tftheme-hero;"
-			/>
 			<h1 class="tf26-section-title">テーマについて</h1>
 			<br />
 			<p class="fade-up-o mb-4 leading-[1.8rem]">
@@ -117,8 +109,16 @@
 				<br />
 				ぜひ、<strong>「あなたの桐朋祭」</strong>を存分に楽しんでください！
 			</p>
+			<br />
 			<hr class="main-hr" />
+			<br />
 			<h1 class="tf26-section-title">ロゴについて</h1>
+			<img
+				src="https://pic.atserver186.jp/img/tohofes/about/logo-main-v2.webp"
+				alt="第75回桐朋祭ロゴ"
+				class="m-auto mb-4 ml-auto h-auto w-[20%]"
+				style="view-transition-name: tftheme-hero;"
+			/>
 			<br />
 			<p class="fade-up-o mb-4 leading-[1.8rem]">
 				ロゴ制作にあたっては、今回のテーマである「結う」の要素をストレートに取り込むことを意識しました。

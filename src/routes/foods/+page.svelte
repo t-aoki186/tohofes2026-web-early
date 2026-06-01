@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	import { reveal } from '$lib/reveal';
 
-	let pageTitle = '飲食団体';
+	let pageTitle = '飲食情報';
 </script>
 
 <svelte:head>
