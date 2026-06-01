@@ -1,10 +1,22 @@
-<script>
-	const { data } = $props();
-
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import { reveal } from '$lib/reveal';
 
+	// 型定義
+	type Item = {
+		category: string;
+		name: string;
+	};
+
 	let pageTitle = 'サイト情報';
+
+	export let data;
+	const { serverLocation, items } = data as { serverLocation: string; items: Item[] };
+
+	// カテゴリー別にフィルタリング
+	$: siteDevItems = items.filter((item: Item) => item.category === 'site_dev');
+	$: siteDesignItems = items.filter((item: Item) => item.category === 'site_disign');
+	$: manageItems = items.filter((item: Item) => item.category === 'manage');
 </script>
 
 <svelte:head>
@@ -41,9 +53,30 @@
 			</div>
 			<div class="mb-4 rounded-2xl bg-gray-50 p-4">
 				<h2 class="text-lg font-semibold">制作</h2>
-				<p class="mt-4 text-lg"><span class="font-bold">ホームページ開発:</span>名前</p>
-				<p class="mt-4 text-lg"><span class="font-bold">ホームページデザイン:</span>名前</p>
-				<p class="mt-4 text-lg"><span class="font-bold">ホームページ管理/運用:</span>名前</p>
+				<div class="mt-4 text-lg">
+					<span class="font-bold">ホームページ開発:</span>
+					{#each siteDevItems as item}
+						<ul>
+							<li>{item.name}</li>
+						</ul>
+					{/each}
+				</div>
+				<div class="mt-4 text-lg">
+					<span class="font-bold">ホームページデザイン:</span>
+					{#each siteDesignItems as item}
+						<ul>
+							<li>{item.name}</li>
+						</ul>
+					{/each}
+				</div>
+				<div class="mt-4 text-lg">
+					<span class="font-bold">ホームページ管理/運用:</span>
+					{#each manageItems as item}
+						<ul>
+							<li>{item.name}</li>
+						</ul>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</section>
