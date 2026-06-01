@@ -283,8 +283,8 @@
 	<!---->
 	<!--s:お知らせ-->
 	<div class="container mx-auto mt-10" data-aos="fade-up">
-		<div class="main-link">
-			<div class="link-3" style="margin: 0 5px 5px 5px; ">
+		<div class="main-link min-h-80">
+			<div class="link-3 tp-news-list" style="margin: 0 5px 5px 5px; ">
 				<p use:reveal class="news-section-title" style="padding: 0 0 10px 0;">
 					{#each '・お知らせ'.split('') as char, i}
 						<span class="char text-(--main-text-color)" style={`--d: ${i * 0.12}s`}>{char}</span>
@@ -319,13 +319,13 @@
 									</div>
 								</a>
 							</li>
-						</ul>	
+						</ul>
 					{/each}
 				{:else}
 					<p>お知らせの取得に失敗しました</p>
 				{/if}
 			</div>
-			<div class="link-4 flex items-center justify-center">
+			<div class="link-4 tp-news-bg-icon flex items-center justify-center">
 				<i
 					class="tf26-icon-material icon-megaphone -scale-x-100 rotate-30 transform text-[12rem] text-(--main-text-color)"
 				></i>
@@ -686,6 +686,7 @@
 		width: 100%;
 	}
 
+	
 	@media (max-width: 1280px) {
 		.tp-top-content {
 			width: 90%;
@@ -712,6 +713,23 @@
 			object-fit: cover;
 			height: 100%;
 			border-radius: 0;
+		}
+
+		.tp-news-list {
+			z-index: 3;
+		}
+
+		.tp-news-bg-icon {
+			z-index: 2;
+			position: absolute !important;
+			display: flex;
+			right: 55%;
+			left: 45%;
+			margin-top: 6rem;
+		}
+
+		.tp-news-bg-icon i {
+			opacity: 0.5;
 		}
 	}
 </style>

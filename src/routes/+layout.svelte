@@ -213,7 +213,7 @@
 
 <Modal bind:showModal>
 	{#if modalType === 'search'}
-		<form class="s-search-form mb-4" action="/organizations/" method="GET">
+		<form class="s-search-form mb-4" action="/organizations/" style="border-radius: 50px !important; border: none !important;" method="GET">
 			<input
 				class="s-search-input"
 				type="text"
@@ -225,7 +225,7 @@
 				><i class="fas fa-search"></i></button
 			>
 		</form>
-		<div class="relative m-auto mt-10 mb-4 max-w-125 bg-white">
+		<div class="relative m-auto mt-10 mb-4 w-full bg-white/50 rounded-t-2xl">
 			<!-- 左下の角 -->
 			<span
 				class="absolute bottom-0 left-0 h-4 w-4 border-b-2 border-l-2 border-(--main-text-color)"
@@ -332,9 +332,9 @@
 		<!---->
 		<div class="flex items-center md:hidden">
 			<!--s:スマホ用検索ボタン-->
-			<p class="mr-4 cursor-not-allowed text-sm">
-				<i class="fa-solid fa-magnifying-glass text-gray-500"></i>
-			</p>
+			<button onclick={() => openModal('search')} class="mr-4 cursor-pointer" title="検索する">
+				<i class="fa-solid fa-magnifying-glass text-(--main-text-color)"></i>
+			</button>
 			<!--e:スマホ用検索ボタン-->
 			<!-- ハンバーガー / その他メニュー閉じる（スマホ用） -->
 			<div class="grid">
@@ -448,12 +448,14 @@
 			<div class="flex gap-2 text-center" style="">
 				<a
 					href="https://www.instagram.com/tohofes_2026/"
-					class="text-bace header-text" target="_blank"
+					class="text-bace header-text"
+					target="_blank"
 					title="第75回桐朋祭実行委員会公式Instagram"><i class="fa-brands fa-instagram"></i></a
 				>
 				<a
 					href="https://x.com/tohofes_2026"
-					class="text-bace header-text" target="_blank"
+					class="text-bace header-text"
+					target="_blank"
 					title="第75回桐朋祭実行委員会公式X(旧Twitter)"><i class="fa-brands fa-x-twitter"></i></a
 				>
 			</div>

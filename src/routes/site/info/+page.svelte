@@ -43,6 +43,7 @@
 				<h2 class="text-lg font-semibold">制作</h2>
 				<p class="mt-4 text-lg"><span class="font-bold">ホームページ開発:</span>名前</p>
 				<p class="mt-4 text-lg"><span class="font-bold">ホームページデザイン:</span>名前</p>
+				<p class="mt-4 text-lg"><span class="font-bold">ホームページ管理/運用:</span>名前</p>
 			</div>
 		</div>
 	</section>
