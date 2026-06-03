@@ -590,8 +590,8 @@
 							<p class="text-white">参加団体の取得に失敗しました</p>
 						{/if}
 						<li class="flex flex-col gap-2.5">
-							<a href="/organizations">
-								<span>一覧はこちら</span>
+							<a href="/organizations" class="font-bold">
+								<i class="fa-solid fa-list"></i><span>一覧はこちら</span>
 							</a>
 						</li>
 					</ul>
@@ -678,8 +678,8 @@
 							<p class="text-white">参加団体の取得に失敗しました</p>
 						{/if}
 						<li class="flex flex-col gap-2.5">
-							<a href="/organizations">
-								<span>一覧はこちら</span>
+							<a href="/organizations" class="font-bold">
+								<i class="fa-solid fa-list"></i><span>一覧はこちら</span>
 							</a>
 						</li>
 					</ul>

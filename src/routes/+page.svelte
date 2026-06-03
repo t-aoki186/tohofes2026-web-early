@@ -213,7 +213,7 @@
 			で決済方法が以下の通り異なりますので、あらかじめご確認ください。
 		</p>
 		<img
-			src="https://pic.atserver186.jp/img/tohofes/top-page/top-page-important-1.webp"
+			src="https://pic.atserver186.jp/img/tohofes/top-page/top-page-important-1_v2.webp"
 			alt="「食堂・パン売り場」と「飲食団体（屋台・喫茶）」に関する支払い方法の案内。左側には食堂・パン売り場の説明があり、購入時には硬貨と千円札のみ利用できることが明記されている。左側には飲食団体の説明があり、交通系ICカード(モバイルSuica等を含む)のみが利用できることが明記されている。"
 			class="w-full"
 		/>
@@ -637,13 +637,19 @@
 	<!---->
 	<hr class="main-hr" />
 	<!--s:アニメーションを再視聴-->
-	<div class="container m-auto my-10">
+	<div class="container m-auto my-10 flex">
 		<button onclick={replayAnimation} class="link-main">
 			<div class="link-main-underline">
 				<i class="fa-solid fa-circle-play"></i>
 				<span>アニメーションをもう一度視聴する</span>
 			</div>
 		</button>
+		<a href="/site/info/" class="link-main">
+			<div class="link-main-underline">
+				<i class="fa-solid fa-arrow-right-long"></i>
+				<span>クレジット</span>
+			</div>
+		</a>
 	</div>
 </main>
 
@@ -686,7 +692,6 @@
 		width: 100%;
 	}
 
-	
 	@media (max-width: 1280px) {
 		.tp-top-content {
 			width: 90%;
