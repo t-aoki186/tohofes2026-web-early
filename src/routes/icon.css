@@ -32,3 +32,18 @@
   -webkit-mask-image: url("https://cdn.atserver186.jp/img/tf26/material/x-mark-thin.svg");
   mask-image: url("https://cdn.atserver186.jp/img/tf26/material/x-mark-thin.svg");
 }
+
+.icon-no-phone{
+  -webkit-mask-image: url("https://cdn.atserver186.jp/img/tf26/material/no_phone.webp");
+  mask-image: url("https://cdn.atserver186.jp/img/tf26/material/no_phone.webp");
+}
+
+.icon-no-food{
+  -webkit-mask-image: url("https://cdn.atserver186.jp/img/tf26/material/no_food.webp");
+  mask-image: url("https://cdn.atserver186.jp/img/tf26/material/no_food.webp");
+}
+
+.icon-no-camera{
+  -webkit-mask-image: url("https://cdn.atserver186.jp/img/tf26/material/no_camera.webp");
+  mask-image: url("https://cdn.atserver186.jp/img/tf26/material/no_camera.webp");
+}

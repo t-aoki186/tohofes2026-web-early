@@ -213,7 +213,7 @@
 			で決済方法が以下の通り異なりますので、あらかじめご確認ください。
 		</p>
 		<img
-			src="https://pic.atserver186.jp/img/tohofes/top-page/top-page-important-1_v2.webp"
+			src="https://pic.atserver186.jp/img/tohofes/top-page/top-page-important-1_v3.webp"
 			alt="「食堂・パン売り場」と「飲食団体（屋台・喫茶）」に関する支払い方法の案内。左側には食堂・パン売り場の説明があり、購入時には硬貨と千円札のみ利用できることが明記されている。左側には飲食団体の説明があり、交通系ICカード(モバイルSuica等を含む)のみが利用できることが明記されている。"
 			class="w-full"
 		/>
@@ -634,6 +634,30 @@
 		</a>
 	</div>
 	<!--e:テーマについて-->
+	<!---->
+
+	<!--s:講演者-->
+	<div class="container m-auto mt-10 rounded-xl bg-(--title-bg-color)" data-aos="fade-up">
+		<p use:reveal class="tf26-page-title">
+			{#each '講演者'.split('') as char, i}
+				<span class="char" style={`--d: ${i * 0.12}s`}>{char}</span>
+			{/each}
+		</p>
+	</div>
+	<div class="container mx-auto mt-4 mb-12" data-aos="fade-up">
+		<div class="main-link">
+			今年の講演者は、「イモニイ」こと井本陽久(いもと はるひさ)氏です。
+		</div>
+		<br />
+		<a href="/guest" class="link-main">
+			<div class="link-main-underline">
+				<i class="fa-solid fa-arrow-right-long"></i>
+				<span>詳しくはこちら</span>
+			</div>
+		</a>
+	</div>
+	<!--e:テーマについて-->
+
 	<!---->
 	<hr class="main-hr" />
 	<!--s:アニメーションを再視聴-->
