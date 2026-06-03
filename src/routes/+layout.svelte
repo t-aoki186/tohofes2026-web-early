@@ -420,7 +420,7 @@
 					<a
 						href="https://x.com/tohofes_2026"
 						class="header-text ml-3 text-xs tracking-wider transition"
-						title="Instagram"
+						title="X(旧Twitter)"
 						target="_blank"
 					>
 						<i class="fa-brands fa-x-twitter"></i>
@@ -448,13 +448,13 @@
 			<div class="flex gap-2 text-center" style="">
 				<a
 					href="https://www.instagram.com/tohofes_2026/"
-					class="text-bace header-text"
+					class="text-xl header-text"
 					target="_blank"
 					title="第75回桐朋祭実行委員会公式Instagram"><i class="fa-brands fa-instagram"></i></a
 				>
 				<a
 					href="https://x.com/tohofes_2026"
-					class="text-bace header-text"
+					class="text-xl header-text"
 					target="_blank"
 					title="第75回桐朋祭実行委員会公式X(旧Twitter)"><i class="fa-brands fa-x-twitter"></i></a
 				>

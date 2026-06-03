@@ -499,7 +499,7 @@
 				<div class="tp-search-method">
 					<a href="/organizations" class="dash-link">
 						<i class="fa-solid fa-list"></i>
-						<p>絞り込む</p>
+						<p>企画一覧を見る</p>
 					</a>
 				</div>
 				<div class="tp-search-method">

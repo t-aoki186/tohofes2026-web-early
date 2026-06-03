@@ -43,9 +43,9 @@
 						</a>
 					</li>
 					<li>
-						<p class="cursor-not-allowed text-gray-500">
-							<span>タイムテーブル</span>
-						</p>
+						<a href="/timetable">
+							<span>企画タイムテーブル</span>
+						</a>
 					</li>
 					<li>
 						<a href="/news" target="_blank">
